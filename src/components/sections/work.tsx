@@ -17,6 +17,7 @@ const workHistory: WorkEntry[] = [
     company: "LedgerLine Technologies",
     role: "Frontend Developer",
     period: "May 2025 — Nov 2025",
+    current: true,
     achievements: [
       "Specialized in blockchain development and scalable web/mobile solutions using React and Next.js.",
       "Developed Telegram Mini Apps and decentralized (dApp) solutions, focusing on performance and security.",
@@ -27,7 +28,6 @@ const workHistory: WorkEntry[] = [
     company: "Kode Creators",
     role: "Frontend Developer",
     period: "Sep 2022 — May 2025",
-    current: true,
     achievements: [
       "Built and maintained responsive web applications using React.js, Next.js, and Tailwind CSS.",
       "Structured scalable admin panel architectures with role-based access control and optimized state management.",
@@ -60,7 +60,7 @@ export function WorkSection() {
     restDelta: 0.001,
   });
 
-  const translateY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const dotY = useTransform(scaleY, (s) => `calc(${s * 100}% - 5px)`);
 
   return (
     <section
@@ -109,13 +109,13 @@ export function WorkSection() {
             }}
           />
 
-          {/* Moving Circle Pointer */}
+          {/* Moving Circle Pointer — tracks the growing line */}
           <motion.div
-            className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full z-20 hidden md:block"
+            className="absolute -left-[5px] w-2.5 h-2.5 rounded-full z-20 hidden md:block"
             style={{
               backgroundColor: "var(--accent)",
               boxShadow: "0 0 10px var(--accent)",
-              y: translateY,
+              top: dotY,
             }}
           />
 
@@ -159,12 +159,12 @@ export function WorkSection() {
                         </p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span
+                        <time
                           className="font-mono text-xs"
                           style={{ color: "var(--text-muted)" }}
                         >
                           {entry.period}
-                        </span>
+                        </time>
                         {entry.current && (
                           <span
                             className="px-2 py-0.5 rounded-full text-xs font-medium"
@@ -174,7 +174,7 @@ export function WorkSection() {
                               border: "1px solid rgba(59,130,246,0.2)",
                             }}
                           >
-                            Current
+                            Most Recent
                           </span>
                         )}
                       </div>

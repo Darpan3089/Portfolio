@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowDown, Download } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function HeroSection() {
@@ -27,16 +27,14 @@ export function HeroSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl"
         >
-          {/* Greeting */}
+          {/* Greeting — typewriter effect */}
           <p
-            className="font-mono text-sm mb-6 flex items-center gap-2"
+            className="font-mono text-sm mb-6"
             style={{ color: "var(--accent)" }}
           >
-            <span
-              className="inline-block w-6 h-px"
-              style={{ backgroundColor: "var(--accent)" }}
-            />
-            Hi, I&apos;m Darpan 👋
+            <span className="typewriter">
+              Hi, I&apos;m Darpan — Frontend Engineer 👋
+            </span>
           </p>
 
           {/* Headline */}
@@ -47,9 +45,9 @@ export function HeroSection() {
               color: "var(--text-primary)",
             }}
           >
-            Software Engineer building{" "}
-            <span style={{ color: "var(--accent)" }}>scalable</span> &amp; dynamic
-            web apps.
+            I build{" "}
+            <span style={{ color: "var(--accent)" }}>fast, accessible</span>{" "}
+            React apps that ship.
           </h1>
 
           {/* Subtext */}
@@ -73,16 +71,16 @@ export function HeroSection() {
               }}
             >
               View Work
-              <ArrowDown size={15} />
+              <ArrowUpRight size={15} />
             </Link>
             <a
               href="/resume.pdf"
               download
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200 hover:opacity-80"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200 hover:bg-[var(--surface-elevated)]"
               style={{
                 border: "1px solid var(--border)",
                 color: "var(--text-primary)",
-                background: "transparent",
+                background: "var(--surface)",
               }}
             >
               <Download size={15} />
@@ -111,13 +109,16 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.5 }}
+        aria-hidden="true"
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
           style={{ color: "var(--text-muted)" }}
         >
-          <ArrowDown size={18} />
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
         </motion.div>
       </motion.div>
     </section>

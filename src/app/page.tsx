@@ -7,6 +7,7 @@ import { WorkSection } from "@/components/sections/work";
 import { TechSection } from "@/components/sections/tech";
 import { ProjectsSection } from "@/components/sections/projects";
 import { ContactSection } from "@/components/sections/contact";
+import { SectionIndicator } from "@/components/section-indicator";
 
 export const metadata: Metadata = {
   title: "Darpan Patel | Software Engineer | React.js & Next.js Expert",
@@ -18,6 +19,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
+      <SectionIndicator />
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
         <AboutSection />

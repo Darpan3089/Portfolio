@@ -28,10 +28,13 @@ function ContactForm() {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
   });
+
+  const messageLength = watch("message")?.length ?? 0;
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -51,18 +54,6 @@ function ContactForm() {
       setIsSubmitting(false);
     }
   };
-
-  const inputStyles = {
-    background: "var(--surface)",
-    border: "1px solid var(--border)",
-    color: "var(--text-primary)",
-    borderRadius: "8px",
-    padding: "10px 14px",
-    fontSize: "14px",
-    width: "100%",
-    outline: "none",
-    transition: "border-color 0.2s",
-  } as const;
 
   return (
     <form
@@ -84,13 +75,7 @@ function ContactForm() {
           id="contact-name"
           type="text"
           placeholder="Your name"
-          style={inputStyles}
-          onFocus={(e) =>
-            (e.target.style.borderColor = "var(--accent)")
-          }
-          onBlur={(e) =>
-            (e.target.style.borderColor = "var(--border)")
-          }
+          className="input-field"
           aria-describedby={errors.name ? "name-error" : undefined}
           aria-invalid={!!errors.name}
         />
@@ -98,7 +83,7 @@ function ContactForm() {
           <p
             id="name-error"
             className="text-xs mt-1.5"
-            style={{ color: "#f87171" }}
+            style={{ color: "var(--error)" }}
             role="alert"
           >
             {errors.name.message}
@@ -119,9 +104,7 @@ function ContactForm() {
           id="contact-email"
           type="email"
           placeholder="your@email.com"
-          style={inputStyles}
-          onFocus={(e) => (e.target.style.borderColor = "var(--accent)")}
-          onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
+          className="input-field"
           aria-describedby={errors.email ? "email-error" : undefined}
           aria-invalid={!!errors.email}
         />
@@ -129,7 +112,7 @@ function ContactForm() {
           <p
             id="email-error"
             className="text-xs mt-1.5"
-            style={{ color: "#f87171" }}
+            style={{ color: "var(--error)" }}
             role="alert"
           >
             {errors.email.message}
@@ -138,21 +121,30 @@ function ContactForm() {
       </div>
 
       <div>
-        <label
-          htmlFor="contact-message"
-          className="block text-sm font-medium mb-1.5"
-          style={{ color: "var(--text-muted)" }}
-        >
-          Message
-        </label>
+        <div className="flex items-center justify-between mb-1.5">
+          <label
+            htmlFor="contact-message"
+            className="block text-sm font-medium"
+            style={{ color: "var(--text-muted)" }}
+          >
+            Message
+          </label>
+          <span
+            className="text-xs font-mono"
+            style={{
+              color: messageLength > 1800 ? "var(--error)" : "var(--text-muted)",
+            }}
+          >
+            {messageLength}/2000
+          </span>
+        </div>
         <textarea
           {...register("message")}
           id="contact-message"
           rows={5}
           placeholder="Tell me about your project..."
-          style={{ ...inputStyles, resize: "vertical", minHeight: "120px" }}
-          onFocus={(e) => (e.target.style.borderColor = "var(--accent)")}
-          onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
+          className="input-field"
+          style={{ minHeight: "120px" }}
           aria-describedby={errors.message ? "message-error" : undefined}
           aria-invalid={!!errors.message}
         />
@@ -160,7 +152,7 @@ function ContactForm() {
           <p
             id="message-error"
             className="text-xs mt-1.5"
-            style={{ color: "#f87171" }}
+            style={{ color: "var(--error)" }}
             role="alert"
           >
             {errors.message.message}
@@ -171,7 +163,7 @@ function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200 hover:opacity-90 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         style={{
           backgroundColor: "var(--accent)",
           color: "#fff",
@@ -269,14 +261,22 @@ export function ContactSection() {
                     href.startsWith("mailto") ? undefined : "noopener noreferrer"
                   }
                   aria-label={ariaLabel}
-                  className="flex items-center gap-3 p-4 rounded-xl transition-all duration-200 hover:opacity-80 group"
+                  className="flex items-center gap-3 p-4 rounded-xl transition-all duration-200 group"
                   style={{
                     background: "var(--surface)",
                     border: "1px solid var(--border)",
                   }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = "var(--accent)";
+                    e.currentTarget.style.background = "var(--surface-elevated)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "var(--border)";
+                    e.currentTarget.style.background = "var(--surface)";
+                  }}
                 >
                   <Icon
-                    style={{ color: "var(--accent)" }}
+                    style={{ color: "var(--accent)", flexShrink: 0 }}
                     aria-hidden="true"
                   />
                   <span
