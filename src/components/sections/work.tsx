@@ -14,10 +14,20 @@ interface WorkEntry {
 
 const workHistory: WorkEntry[] = [
   {
+    company: "Kode Creators Private Limited",
+    role: "Software Engineer",
+    period: "Dec 2025 — Present",
+    current: true,
+    achievements: [
+      "Specializing in React and TypeScript, building dynamic, data-driven applications with optimized state management and role-based access control.",
+      "Structuring scalable admin panel architectures and leveraging AI-assisted tools to accelerate development while maintaining the highest code quality.",
+      "Building responsive interfaces and implementing complex business logic across full-stack features.",
+    ],
+  },
+  {
     company: "LedgerLine Technologies",
     role: "Frontend Developer",
     period: "May 2025 — Nov 2025",
-    current: true,
     achievements: [
       "Specialized in blockchain development and scalable web/mobile solutions using React and Next.js.",
       "Developed Telegram Mini Apps and decentralized (dApp) solutions, focusing on performance and security.",
