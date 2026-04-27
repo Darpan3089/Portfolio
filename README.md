@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Darpan Patel — Portfolio
 
-## Getting Started
+A modern, production-ready personal portfolio website built with **Next.js 15**, **TypeScript**, **Tailwind CSS v4**, **Framer Motion**, and **shadcn/ui** conventions.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript (strict mode)
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Fonts:** Geist Sans + Geist Mono
+- **Email:** Resend
+- **Form:** React Hook Form + Zod
+- **Toasts:** Sonner
+- **Theme:** next-themes (dark/light)
+
+## 📦 Setup
+
+### Prerequisites
+- Node.js 20+
+- pnpm
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copy the example file and fill in your values:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cp .env.example .env.local
+```
 
-## Learn More
+| Variable | Description |
+|---|---|
+| `RESEND_API_KEY` | Your Resend API key from [resend.com](https://resend.com) |
+| `CONTACT_EMAIL` | Email to receive contact form submissions |
 
-To learn more about Next.js, take a look at the following resources:
+### Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+### Build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm build
+pnpm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── api/contact/route.ts      # Contact form API (Resend)
+│   ├── blog/
+│   │   ├── page.tsx              # Blog listing
+│   │   └── [slug]/page.tsx       # Blog post
+│   ├── projects/
+│   │   └── [slug]/page.tsx       # Project case study
+│   ├── globals.css               # Design tokens + global styles
+│   ├── layout.tsx                # Root layout
+│   ├── page.tsx                  # Home page
+│   ├── robots.ts                 # SEO robots
+│   └── sitemap.ts                # SEO sitemap
+├── components/
+│   ├── sections/                 # Hero, About, Work, Tech, Projects, Contact
+│   ├── footer.tsx
+│   ├── motion-wrapper.tsx        # Framer Motion helpers
+│   ├── navbar.tsx
+│   ├── theme-provider.tsx
+│   └── theme-toggle.tsx
+└── lib/
+    └── utils.ts                  # cn() utility
+```
+
+## 🌐 Deploy to Vercel
+
+1. Push to GitHub
+2. Import repo at [vercel.com/new](https://vercel.com/new)
+3. Add environment variables in Vercel dashboard:
+   - `RESEND_API_KEY`
+   - `CONTACT_EMAIL`
+4. Deploy → your site is live
+
+## 📧 Email Setup (Resend)
+
+1. Sign up at [resend.com](https://resend.com)
+2. Create an API key
+3. Add your domain for production (or use the sandbox sender for testing)
+4. Add `RESEND_API_KEY` to your `.env.local` and Vercel env vars
+
+## ✏️ Customization
+
+- **Content:** Update the data arrays in each section component under `src/components/sections/`
+- **Colors:** Modify CSS variables in `src/app/globals.css`
+- **Resume:** Drop your PDF into `public/resume.pdf`
+- **OG image:** Replace `public/og/og-image.png` (1200×630px)
+- **Blog posts:** Add entries to the `blogPosts` array in `src/app/blog/[slug]/page.tsx`
+- **Projects:** Add entries to the `projects` array in `src/app/projects/[slug]/page.tsx`
+
+## 📄 License
+
+MIT
