@@ -74,7 +74,7 @@ function ProjectCard({ project }: { project: Project }) {
     >
       {/* Project image with overlay */}
       {project.image && (
-        <div className="relative h-44 overflow-hidden bg-[var(--border)]">
+        <div className="relative h-44 overflow-hidden bg-(--border)">
           <Image
             src={project.image}
             alt={`${project.title} screenshot`}

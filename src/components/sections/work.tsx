@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { FadeUp } from "@/components/motion-wrapper";
 
 interface WorkEntry {
@@ -64,11 +64,13 @@ export function WorkSection() {
     offset: ["start 80%", "end center"],
   });
 
-  const scaleY = useSpring(scrollYProgress, {
+  const springProgress = useSpring(scrollYProgress, {
     stiffness: 80,
     damping: 25,
     restDelta: 0.001,
   });
+
+  const dotY = useTransform(springProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <section
@@ -110,49 +112,90 @@ export function WorkSection() {
           <motion.div
             className="absolute left-0 top-0 bottom-0 w-px hidden md:block origin-top"
             style={{
-              scaleY,
+              scaleY: springProgress,
               background:
                 "linear-gradient(to bottom, var(--accent) 85%, transparent 100%)",
             }}
           />
 
-          {/* Fixed anchor dot at the top of the line */}
-          <div
-            className="absolute -left-[4px] top-0 w-2 h-2 rounded-full hidden md:block z-10"
+          {/* Scroll-tracking dot — follows the tip of the accent line */}
+          <motion.div
+            className="absolute left-[-5px] top-0 w-[11px] h-[11px] rounded-full hidden md:block z-10"
             style={{
+              y: dotY,
+              translateY: "-50%",
               backgroundColor: "var(--accent)",
-              boxShadow: "0 0 8px var(--accent)",
+              boxShadow:
+                "0 0 0 3px var(--surface), 0 0 12px var(--accent), 0 0 4px var(--accent)",
             }}
           />
 
-          <div className="space-y-12 md:pl-8">
+          <div className="space-y-8 md:pl-10">
             {workHistory.map((entry, index) => (
               <FadeUp key={entry.company} delay={index * 0.1}>
-                <div className="relative">
-                  {/* Timeline dot */}
+                <motion.div
+                  className="relative group"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                >
+                  {/* Timeline connector dot per entry */}
                   <div
-                    className="absolute -left-8 top-1.5 w-2 h-2 rounded-full hidden md:block"
+                    className="absolute   left-[-45.5px] top-0 hidden md:flex items-center justify-center w-3 h-3 rounded-full z-10 transition-all duration-300"
                     style={{
                       backgroundColor: entry.current
                         ? "var(--accent)"
-                        : "var(--border)",
+                        : "var(--surface)",
+                      border: entry.current
+                        ? "2px solid var(--accent)"
+                        : "2px solid var(--border)",
                       boxShadow: entry.current
-                        ? `0 0 0 3px var(--bg), 0 0 0 5px var(--accent)`
+                        ? `0 0 0 3px var(--surface), 0 0 8px var(--accent)`
                         : "none",
                     }}
-                  />
+                  >
+                    {/* Pulsing ring for current role */}
+                    {entry.current && (
+                      <motion.span
+                        className="absolute inset-0 rounded-full"
+                        style={{ border: "2px solid var(--accent)" }}
+                        animate={{ scale: [1, 1.8, 1], opacity: [1, 0, 1] }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      />
+                    )}
+                  </div>
 
+                  {/* Card */}
                   <div
-                    className="rounded-xl p-6"
+                    className="rounded-xl p-6 transition-all duration-300"
                     style={{
-                      background: "var(--bg)",
-                      border: "1px solid var(--border)",
+                      background: entry.current
+                        ? "linear-gradient(135deg, rgba(59,130,246,0.06) 0%, var(--bg) 60%)"
+                        : "var(--bg)",
+                      border: entry.current
+                        ? "1px solid rgba(59,130,246,0.3)"
+                        : "1px solid var(--border)",
+                      boxShadow: entry.current
+                        ? "0 0 0 0 transparent, inset 0 1px 0 rgba(59,130,246,0.1)"
+                        : "none",
                     }}
                   >
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                    {/* Hover shimmer on current */}
+                    <div
+                      className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      style={{
+                        background: entry.current
+                          ? "linear-gradient(135deg, rgba(59,130,246,0.08) 0%, transparent 70%)"
+                          : "linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 70%)",
+                      }}
+                    />
+
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
                       <div>
                         <h3
-                          className="text-lg font-bold"
+                          className="text-lg font-bold mb-1"
                           style={{ color: "var(--text-primary)" }}
                         >
                           {entry.company}
@@ -164,29 +207,44 @@ export function WorkSection() {
                           {entry.role}
                         </p>
                       </div>
-                      <div className="flex items-center gap-2">
+
+                      <div className="flex items-center gap-2 shrink-0">
                         <time
-                          className="font-mono text-xs"
-                          style={{ color: "var(--text-muted)" }}
+                          className="font-mono text-xs px-2.5 py-1 rounded-md"
+                          style={{
+                            color: entry.current
+                              ? "var(--accent)"
+                              : "var(--text-muted)",
+                            background: entry.current
+                              ? "rgba(59,130,246,0.08)"
+                              : "rgba(255,255,255,0.04)",
+                            border: entry.current
+                              ? "1px solid rgba(59,130,246,0.2)"
+                              : "1px solid rgba(255,255,255,0.06)",
+                          }}
                         >
                           {entry.period}
                         </time>
                         {entry.current && (
                           <span
-                            className="px-2 py-0.5 rounded-full text-xs font-medium"
+                            className="px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5"
                             style={{
-                              background: "rgba(59,130,246,0.1)",
+                              background: "rgba(59,130,246,0.12)",
                               color: "var(--accent)",
-                              border: "1px solid rgba(59,130,246,0.2)",
+                              border: "1px solid rgba(59,130,246,0.25)",
                             }}
                           >
-                            Most Recent
+                            <span
+                              className="w-1.5 h-1.5 rounded-full inline-block"
+                              style={{ backgroundColor: "var(--accent)" }}
+                            />
+                            Now
                           </span>
                         )}
                       </div>
                     </div>
 
-                    <ul className="space-y-2.5">
+                    <ul className="space-y-3">
                       {entry.achievements.map((achievement, i) => (
                         <li
                           key={i}
@@ -194,8 +252,8 @@ export function WorkSection() {
                           style={{ color: "var(--text-muted)" }}
                         >
                           <span
-                            className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full"
-                            style={{ backgroundColor: "var(--accent)" }}
+                            className="mt-2 shrink-0 w-1 h-1 rounded-full"
+                            style={{ backgroundColor: "var(--accent)", opacity: 0.7 }}
                             aria-hidden="true"
                           />
                           {achievement}
@@ -203,7 +261,7 @@ export function WorkSection() {
                       ))}
                     </ul>
                   </div>
-                </div>
+                </motion.div>
               </FadeUp>
             ))}
           </div>
