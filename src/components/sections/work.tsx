@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { FadeUp } from "@/components/motion-wrapper";
 
 interface WorkEntry {
@@ -61,16 +61,14 @@ export function WorkSection() {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start center", "end center"],
+    offset: ["start 80%", "end center"],
   });
 
   const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
+    stiffness: 80,
+    damping: 25,
     restDelta: 0.001,
   });
-
-  const dotY = useTransform(scaleY, (s) => `calc(${s * 100}% - 5px)`);
 
   return (
     <section
@@ -102,30 +100,28 @@ export function WorkSection() {
 
         {/* Timeline */}
         <div ref={containerRef} className="relative">
-          {/* Base Vertical line */}
+          {/* Base Vertical line — full height, dimmed */}
           <div
             className="absolute left-0 top-0 bottom-0 w-px hidden md:block"
-            style={{
-              background: "var(--border)",
-            }}
+            style={{ background: "var(--border)" }}
           />
 
-          {/* Active Vertical line (Grows on scroll) */}
+          {/* Growing accent line — scales from top as user scrolls */}
           <motion.div
             className="absolute left-0 top-0 bottom-0 w-px hidden md:block origin-top"
             style={{
-              background: "var(--accent)",
-              scaleY: scaleY,
+              scaleY,
+              background:
+                "linear-gradient(to bottom, var(--accent) 85%, transparent 100%)",
             }}
           />
 
-          {/* Moving Circle Pointer — tracks the growing line */}
-          <motion.div
-            className="absolute -left-[5px] w-2.5 h-2.5 rounded-full z-20 hidden md:block"
+          {/* Fixed anchor dot at the top of the line */}
+          <div
+            className="absolute -left-[4px] top-0 w-2 h-2 rounded-full hidden md:block z-10"
             style={{
               backgroundColor: "var(--accent)",
-              boxShadow: "0 0 10px var(--accent)",
-              top: dotY,
+              boxShadow: "0 0 8px var(--accent)",
             }}
           />
 
