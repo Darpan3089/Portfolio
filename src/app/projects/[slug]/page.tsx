@@ -55,13 +55,13 @@ const projects: Project[] = [
     title: "Gas Flow Solution",
     description:
       "Industrial IoT dashboard for monitoring gas flow metrics in real-time with alerting and historical reporting.",
-    tags: ["React", "TypeScript", "Recharts", "WebSockets", "Node.js", "InfluxDB"],
+    tags: ["React", "TypeScript", "Chart.js", "WebSockets", "Node.js", "InfluxDB"],
     problem:
       "An industrial gas distribution company needed real-time visibility into flow rates, pressure readings, and valve states across multiple monitoring stations. Alert conditions were being missed because operators had to check multiple disconnected systems. Historical data was stored in spreadsheets, making trend analysis impossible.",
     approach:
       "Built a single unified dashboard that aggregated data from all monitoring stations into one view with a configurable alerting system. Used WebSockets for real-time data streaming with an exponential backoff reconnection strategy for resilience. Alerts were designed as a layered system — visual, audio (opt-in), and email notifications — so operators could configure their preferred channels. Historical analysis was powered by time-series charts with selectable time windows.",
     techDecisions:
-      "InfluxDB was chosen for time-series storage because it's built for exactly this use case — efficient storage and querying of timestamped metrics data. Recharts for visualization because it's React-native and composable, allowing custom dot rendering for alert thresholds. TypeScript strict mode was especially valuable here — sensor data types were complex and nested, and type safety prevented several bugs around unit conversions.",
+      "InfluxDB was chosen for time-series storage because it's built for exactly this use case — efficient storage and querying of timestamped metrics data. Chart.js for visualization because it's lightweight and highly configurable, allowing custom rendering for alert thresholds. TypeScript strict mode was especially valuable here — sensor data types were complex and nested, and type safety prevented several bugs around unit conversions.",
     lessonsLearned:
       "Industrial software has a different performance profile than typical web apps. The data volume (readings every 100ms from 50+ stations) required careful throttling and batching strategies to avoid overwhelming the browser. Also learned to always design for connection failures first — in industrial environments, network reliability is not guaranteed, and the dashboard needed to degrade gracefully and clearly communicate its connection state.",
   },

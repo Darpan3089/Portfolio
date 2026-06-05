@@ -7,27 +7,73 @@ interface TechGroup {
 
 const techStack: TechGroup[] = [
   {
-    label: "Frontend",
+    label: "Languages & Frameworks",
     items: [
-      "React",
-      "Next.js",
+      "JavaScript (ES6+)",
       "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
-      "Redux",
-      "Telegram Mini Apps",
-      "Framer Motion",
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
       "HTML5",
       "CSS3",
     ],
   },
   {
-    label: "Backend",
-    items: ["Node.js", "Express.js", "MySQL", "REST APIs", "Blockchain"],
+    label: "State & Data",
+    items: [
+      "Redux Toolkit",
+      "TanStack React Query",
+      "SWR",
+      "Context API",
+      "REST APIs",
+      "WebSockets (Socket.io)",
+    ],
   },
   {
-    label: "Tools",
-    items: ["Git", "GitHub", "Postman", "Vercel", "VS Code", "ESLint"],
+    label: "UI & Styling",
+    items: [
+      "Tailwind CSS",
+      "Framer Motion",
+      "Chart.js",
+      "Responsive Design",
+      "Component-Driven Architecture",
+      "Design Systems",
+    ],
+  },
+  {
+    label: "Performance & Quality",
+    items: [
+      "Code Splitting",
+      "Lazy Loading",
+      "Caching Strategies",
+      "SEO Optimization",
+      "Jest",
+      "Web Vitals",
+    ],
+  },
+  {
+    label: "Specialised",
+    items: [
+      "Blockchain / dApps",
+      "Telegram Mini Apps",
+      "Real-time Dashboards",
+      "AI-Assisted Development",
+    ],
+  },
+  {
+    label: "Database & Tools",
+    items: [
+      "MySQL",
+      "MongoDB",
+      "Git",
+      "GitHub",
+      "Postman",
+      "Vercel",
+      "Swagger",
+      "CI/CD",
+      "Agile / Scrum",
+    ],
   },
 ];
 

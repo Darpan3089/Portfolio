@@ -10,9 +10,9 @@ import { ContactSection } from "@/components/sections/contact";
 import { SectionIndicator } from "@/components/section-indicator";
 
 export const metadata: Metadata = {
-  title: "Darpan Patel | Software Engineer | React.js & Next.js Expert",
+  title: "Darpan Patel | Frontend / Full Stack Developer | React & Next.js",
   description:
-    "Software Engineer specializing in React and TypeScript, building dynamic, data-driven applications with optimized state management and scalable architectures.",
+    "Frontend-focused Full Stack Developer specializing in React, Next.js, and TypeScript — building real-time, data-driven applications with optimized state management and scalable architectures.",
 };
 
 export default function HomePage() {

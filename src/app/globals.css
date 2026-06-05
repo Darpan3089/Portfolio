@@ -203,8 +203,9 @@
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid var(--accent);
+    /* steps() ≈ character count of the hero greeting — keep in sync if the text changes */
     animation:
-      typing 1.6s steps(35) 0.4s both,
+      typing 2.3s steps(50) 0.4s both,
       cursor-blink 0.75s step-end infinite;
     max-width: max-content;
   }

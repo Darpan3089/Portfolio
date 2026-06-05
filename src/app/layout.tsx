@@ -8,16 +8,18 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://darpanpatel.dev"),
   title: {
-    default: "Darpan Patel — Senior Frontend Developer",
+    default: "Darpan Patel — Frontend / Full Stack Developer",
     template: "%s | Darpan Patel",
   },
   description:
-    "Senior Frontend Developer with 4+ years of experience building fast, scalable, and visually polished web applications with React and the modern JavaScript ecosystem.",
+    "Frontend-focused Full Stack Developer with 5+ years of experience building fast, scalable, and performance-optimized web applications with React, Next.js, and TypeScript.",
   keywords: [
     "Frontend Developer",
+    "Full Stack Developer",
     "React",
     "Next.js",
     "TypeScript",
+    "Node.js",
     "Darpan Patel",
     "Vadodara",
     "Web Developer",
@@ -28,25 +30,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://darpanpatel.dev",
-    title: "Darpan Patel — Senior Frontend Developer",
+    title: "Darpan Patel — Frontend / Full Stack Developer",
     description:
       "Building fast, scalable, and visually polished web applications with React and the modern JavaScript ecosystem.",
     siteName: "Darpan Patel",
-    images: [
-      {
-        url: "/og/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Darpan Patel — Senior Frontend Developer",
-      },
-    ],
+    // OG image is generated dynamically — see src/app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
-    title: "Darpan Patel — Senior Frontend Developer",
+    title: "Darpan Patel — Frontend / Full Stack Developer",
     description:
       "Building fast, scalable, and visually polished web applications with React and the modern JavaScript ecosystem.",
-    images: ["/og/og-image.png"],
+    // Twitter image is generated dynamically — see src/app/twitter-image.tsx
   },
   robots: {
     index: true,

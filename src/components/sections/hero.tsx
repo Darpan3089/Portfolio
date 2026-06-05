@@ -33,7 +33,7 @@ export function HeroSection() {
             style={{ color: "var(--accent)" }}
           >
             <span className="typewriter">
-              Hi, I&apos;m Darpan — Frontend Engineer 👋
+              Hi, I&apos;m Darpan — Frontend / Full Stack Developer 👋
             </span>
           </p>
 
@@ -74,7 +74,7 @@ export function HeroSection() {
               <ArrowUpRight size={15} />
             </Link>
             <a
-              href="/resume.pdf"
+              href="/Darpan_Patel_Resume.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200 hover:bg-[var(--surface-elevated)]"
               style={{

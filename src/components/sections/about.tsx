@@ -2,9 +2,9 @@ import { FadeUp } from "@/components/motion-wrapper";
 
 const quickFacts = [
   { label: "Years of experience", value: "5+" },
-  { label: "Projects shipped", value: "30+" },
-  { label: "Tech focus", value: "React / TypeScript" },
-  { label: "Current company", value: "Kode Creators" },
+  { label: "Domains", value: "Healthcare · Fintech · IoT" },
+  { label: "Tech focus", value: "React / Next.js / TypeScript" },
+  { label: "Current role", value: "Software Engineer @ Kode Creators" },
 ];
 
 export function AboutSection() {
@@ -40,27 +40,34 @@ export function AboutSection() {
           <FadeUp delay={0.1}>
             <div className="space-y-5 text-base leading-relaxed" style={{ color: "var(--text-muted)" }}>
               <p>
-                I&apos;m Darpan, a Software Engineer based in{" "}
+                I&apos;m Darpan, a Frontend-focused Full Stack Developer based in{" "}
                 <strong style={{ color: "var(--text-primary)" }}>Vadodara, Gujarat, India</strong>,
                 with over{" "}
                 <strong style={{ color: "var(--text-primary)" }}>5 years of experience</strong>{" "}
-                building dynamic, data-driven applications. I specialize in React and TypeScript,
-                focusing on creating optimized state management systems and scalable
-                architectures.
+                building real-time, performance-optimized applications across healthcare,
+                fintech/blockchain, IoT, and EdTech. I specialize in React, Next.js, and
+                TypeScript, with a focus on optimized state management and component systems
+                that scale across teams.
               </p>
               <p>
-                Currently, I am working with{" "}
-                <strong style={{ color: "var(--text-primary)" }}>Kode Creators</strong>,
-                where I structure scalable admin panel architectures and leverage AI-assisted
-                tools to accelerate development while maintaining the highest standards of code
-                quality. My expertise extends to building responsive interfaces and
-                implementing role-based access control.
+                Currently at{" "}
+                <strong style={{ color: "var(--text-primary)" }}>Kode Creators</strong>, I lead
+                frontend development of healthcare booking and practice-management platforms,
+                architect scalable admin panels with role-based access control, and recently
+                migrated server-state management to{" "}
+                <strong style={{ color: "var(--text-primary)" }}>TanStack React Query</strong>{" "}
+                for smarter caching and optimistic updates. I lean on AI-assisted tooling to
+                accelerate delivery without compromising code quality.
               </p>
               <p>
-                Recently, I&apos;ve been expanding my technical toolkit to include blockchain
-                development and Telegram Mini Apps, bringing decentralized solutions and
-                innovative mobile web experiences to life. I believe great software is built
-                at the intersection of technical depth and design sensibility.
+                Along the way I&apos;ve cut page load times by{" "}
+                <strong style={{ color: "var(--text-primary)" }}>~30%</strong>, reduced manual
+                workflow overhead by{" "}
+                <strong style={{ color: "var(--text-primary)" }}>60%</strong>, and built reusable
+                component systems adopted across engineering teams. My recent work spans
+                blockchain dApps, Telegram Mini Apps, and AI-assisted development tooling — and I
+                believe great software is built at the intersection of technical depth and design
+                sensibility.
               </p>
             </div>
           </FadeUp>
