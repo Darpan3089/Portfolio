@@ -212,9 +212,8 @@ export function ContactSection() {
             className="text-base mb-12 max-w-md"
             style={{ color: "var(--text-muted)" }}
           >
-            I&apos;m open to new opportunities, freelance projects, and
-            interesting conversations. Drop me a message and I&apos;ll reply
-            within 24 hours.
+            Have a project in mind? Book a free consult and let&apos;s see if
+            it&apos;s a fit. I reply within 24 hours.
           </p>
         </FadeUp>
 

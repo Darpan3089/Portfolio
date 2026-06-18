@@ -19,9 +19,9 @@ export function Footer() {
             DP
           </span>
           <span className="text-xs" style={{ color: "var(--text-muted)" }}>
-            © 2026 Darpan Patel. Built with Next.js.
+            © 2026 Darpan Patel.
           </span>
-          <span
+          {/* <span
             className="font-mono text-xs px-1.5 py-0.5 rounded"
             style={{
               color: "var(--text-muted)",
@@ -30,11 +30,25 @@ export function Footer() {
             }}
           >
             v1.0
-          </span>
+          </span> */}
         </div>
 
-        {/* Right: Social links */}
+        {/* Right: Resume + social links */}
         <div className="flex items-center gap-4">
+          <Link
+            href="/Darpan_Patel_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-medium transition-opacity hover:opacity-60"
+            style={{ color: "var(--text-muted)" }}
+          >
+            Resume
+          </Link>
+          <span
+            aria-hidden="true"
+            className="h-3 w-px"
+            style={{ backgroundColor: "var(--border)" }}
+          />
           <Link
             href="https://github.com/Darpan3089"
             target="_blank"

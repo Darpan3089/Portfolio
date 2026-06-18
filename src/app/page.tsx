@@ -6,13 +6,17 @@ import { AboutSection } from "@/components/sections/about";
 import { WorkSection } from "@/components/sections/work";
 import { TechSection } from "@/components/sections/tech";
 import { ProjectsSection } from "@/components/sections/projects";
+import { ServicesSection } from "@/components/sections/services";
+import { TestimonialsSection } from "@/components/sections/testimonials";
+import { ProcessSection } from "@/components/sections/process";
 import { ContactSection } from "@/components/sections/contact";
 import { SectionIndicator } from "@/components/section-indicator";
 
 export const metadata: Metadata = {
-  title: "Darpan Patel | Frontend / Full Stack Developer | React & Next.js",
+  title:
+    "Darpan Patel | Freelance React & Next.js Engineer | Real-Time Web Apps",
   description:
-    "Frontend-focused Full Stack Developer specializing in React, Next.js, and TypeScript — building real-time, data-driven applications with optimized state management and scalable architectures.",
+    "Freelance React & Next.js engineer with 5+ years building fast, real-time, data-heavy web apps for healthcare, fintech, and IoT teams. Available for dashboards, performance audits, and full product builds. Replies within 24 hours.",
 };
 
 export default function HomePage() {
@@ -26,6 +30,9 @@ export default function HomePage() {
         <WorkSection />
         <TechSection />
         <ProjectsSection />
+        <ServicesSection />
+        <TestimonialsSection />
+        <ProcessSection />
         <ContactSection />
       </main>
       <Footer />

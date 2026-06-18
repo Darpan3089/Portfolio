@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // Image metadata
-export const alt = "Darpan Patel — Frontend / Full Stack Developer";
+export const alt = "Darpan Patel — Freelance React & Next.js Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -71,7 +71,7 @@ export default function Image() {
                 backgroundColor: "#10b981",
               }}
             />
-            Available for opportunities
+            Booking freelance projects
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export default function Image() {
               marginTop: 8,
             }}
           >
-            Frontend / Full Stack Developer
+            Freelance React & Next.js Engineer
           </div>
           <div
             style={{
@@ -108,8 +108,8 @@ export default function Image() {
               maxWidth: 900,
             }}
           >
-            Building fast, scalable, and visually polished web apps with React,
-            Next.js & TypeScript.
+            Fast, real-time React apps that don&apos;t break under pressure —
+            dashboards, performance audits & full builds.
           </div>
         </div>
 

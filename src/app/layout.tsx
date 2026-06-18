@@ -8,21 +8,23 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://darpanpatel.dev"),
   title: {
-    default: "Darpan Patel — Frontend / Full Stack Developer",
+    default: "Darpan Patel — Freelance React & Next.js Engineer",
     template: "%s | Darpan Patel",
   },
   description:
-    "Frontend-focused Full Stack Developer with 5+ years of experience building fast, scalable, and performance-optimized web applications with React, Next.js, and TypeScript.",
+    "Freelance React & Next.js engineer with 5+ years building fast, real-time, data-heavy web apps for healthcare, fintech, and IoT teams. Available for dashboards, performance audits, and full product builds.",
   keywords: [
-    "Frontend Developer",
-    "Full Stack Developer",
+    "Freelance React Developer",
+    "Freelance Next.js Developer",
+    "React Consultant",
+    "Real-time Dashboards",
+    "WebSocket",
+    "Frontend Performance Optimization",
     "React",
     "Next.js",
     "TypeScript",
-    "Node.js",
     "Darpan Patel",
-    "Vadodara",
-    "Web Developer",
+    "Hire React Developer",
   ],
   authors: [{ name: "Darpan Patel" }],
   creator: "Darpan Patel",
@@ -30,17 +32,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://darpanpatel.dev",
-    title: "Darpan Patel — Frontend / Full Stack Developer",
+    title: "Darpan Patel — Freelance React & Next.js Engineer",
     description:
-      "Building fast, scalable, and visually polished web applications with React and the modern JavaScript ecosystem.",
+      "Fast, real-time React apps that don't break under pressure. Freelance frontend engineering for data-heavy products — dashboards, performance audits, and full builds.",
     siteName: "Darpan Patel",
     // OG image is generated dynamically — see src/app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
-    title: "Darpan Patel — Frontend / Full Stack Developer",
+    title: "Darpan Patel — Freelance React & Next.js Engineer",
     description:
-      "Building fast, scalable, and visually polished web applications with React and the modern JavaScript ecosystem.",
+      "Fast, real-time React apps that don't break under pressure. Freelance frontend engineering for data-heavy products — dashboards, performance audits, and full builds.",
     // Twitter image is generated dynamically — see src/app/twitter-image.tsx
   },
   robots: {

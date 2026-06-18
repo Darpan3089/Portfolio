@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Download } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function HeroSection() {
@@ -27,13 +27,13 @@ export function HeroSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl"
         >
-          {/* Greeting — typewriter effect */}
+          {/* Eyebrow — typewriter effect */}
           <p
             className="font-mono text-sm mb-6"
             style={{ color: "var(--accent)" }}
           >
             <span className="typewriter">
-              Hi, I&apos;m Darpan — Frontend / Full Stack Developer 👋
+              Freelance React &amp; Next.js Engineer
             </span>
           </p>
 
@@ -45,9 +45,9 @@ export function HeroSection() {
               color: "var(--text-primary)",
             }}
           >
-            I build{" "}
-            <span style={{ color: "var(--accent)" }}>fast, accessible</span>{" "}
-            React apps that ship.
+            I build fast,{" "}
+            <span style={{ color: "var(--accent)" }}>real-time</span>{" "}
+            React apps that don&apos;t break under pressure.
           </h1>
 
           {/* Subtext */}
@@ -55,27 +55,28 @@ export function HeroSection() {
             className="text-lg mb-10 max-w-xl"
             style={{ color: "var(--text-muted)", lineHeight: "1.7" }}
           >
-            Specializing in React, Next.js, and TypeScript to create high-performance,
-            data-driven applications with optimized architectures and seamless
-            user experiences.
+            I&apos;m Darpan — a frontend engineer with 5+ years building
+            data-heavy products for healthcare, fintech, and IoT teams. From live
+            trading dashboards to clinical booking platforms, I turn complex,
+            real-time requirements into interfaces that stay fast, reliable, and
+            genuinely pleasant to use.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-4 mb-12">
             <Link
-              href="#projects"
+              href="#contact"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200 hover:opacity-90 active:scale-95"
               style={{
                 backgroundColor: "var(--accent)",
                 color: "#fff",
               }}
             >
-              View Work
+              Book a free consult
               <ArrowUpRight size={15} />
             </Link>
-            <a
-              href="/Darpan_Patel_Resume.pdf"
-              download
+            <Link
+              href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200 hover:bg-[var(--surface-elevated)]"
               style={{
                 border: "1px solid var(--border)",
@@ -83,9 +84,9 @@ export function HeroSection() {
                 background: "var(--surface)",
               }}
             >
-              <Download size={15} />
-              Download Resume
-            </a>
+              View case studies
+              <ArrowUpRight size={15} />
+            </Link>
           </div>
 
           {/* Status pill */}
@@ -98,7 +99,7 @@ export function HeroSection() {
             }}
           >
             <span className="pulse-dot" aria-hidden="true" />
-            Available for freelance &amp; full-time opportunities
+            Currently booking freelance projects · I reply within 24 hours
           </div>
         </motion.div>
       </div>
