@@ -14,9 +14,9 @@ import { SectionIndicator } from "@/components/section-indicator";
 
 export const metadata: Metadata = {
   title:
-    "Darpan Patel | Freelance React & Next.js Engineer | Real-Time Web Apps",
+    "Darpan Patel | React & Next.js Engineer | Real-Time Web Apps",
   description:
-    "Freelance React & Next.js engineer with 5+ years building fast, real-time, scalable web apps for healthcare, education, and business teams. Available for dashboards, performance audits, and full product builds. Replies within 24 hours.",
+    "React & Next.js engineer with 5+ years building fast, real-time, scalable web apps for healthcare, education, and business teams. Open to full-time frontend roles.",
 };
 
 export default function HomePage() {

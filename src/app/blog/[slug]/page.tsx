@@ -226,12 +226,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs px-2 py-0.5 rounded font-mono"
-                    style={{
-                      background: "rgba(59,130,246,0.08)",
-                      color: "var(--accent)",
-                      border: "1px solid rgba(59,130,246,0.15)",
-                    }}
+                    className="tag"
                   >
                     {tag}
                   </span>

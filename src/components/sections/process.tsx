@@ -1,4 +1,5 @@
 import { FadeUp } from "@/components/motion-wrapper";
+import { SectionHeading } from "@/components/section-heading";
 
 interface Step {
   title: string;
@@ -30,45 +31,28 @@ export function ProcessSection() {
       aria-labelledby="process-heading"
     >
       <div className="container-main">
-        <FadeUp>
-          <p
-            className="font-mono text-xs mb-3 flex items-center gap-2"
-            style={{ color: "var(--accent)" }}
-          >
-            <span
-              className="inline-block w-5 h-px"
-              style={{ backgroundColor: "var(--accent)" }}
-            />
-            Process
-          </p>
-          <h2
-            id="process-heading"
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-12"
-            style={{ color: "var(--text-primary)" }}
-          >
-            How we&apos;ll work together.
-          </h2>
-        </FadeUp>
+        <SectionHeading
+          id="process-heading"
+          eyebrow="Process"
+          title={
+            <>
+              How we&apos;ll work <span className="gradient-text">together</span>.
+            </>
+          }
+        />
 
-        <ol className="grid sm:grid-cols-3 gap-5" role="list">
+        <ol className="relative grid sm:grid-cols-3 gap-4" role="list">
           {steps.map(({ title, description }, index) => (
             <FadeUp key={title} delay={index * 0.1} className="h-full">
-              <li
-                className="h-full flex flex-col rounded-xl p-6"
-                style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--border)",
-                }}
-              >
+              <li className="glass glow-card h-full flex flex-col rounded-2xl p-7">
                 <span
-                  className="font-mono text-sm font-bold mb-4"
-                  style={{ color: "var(--accent)" }}
+                  className="gradient-text font-mono text-4xl font-bold mb-5 leading-none"
                   aria-hidden="true"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3
-                  className="text-base font-bold mb-2"
+                  className="text-lg font-bold mb-2"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {title}

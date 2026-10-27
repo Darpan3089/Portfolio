@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // Image metadata
-export const alt = "Darpan Patel — Freelance React & Next.js Engineer";
+export const alt = "Darpan Patel — React & Next.js Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -71,7 +71,7 @@ export default function Image() {
                 backgroundColor: "#10b981",
               }}
             />
-            Booking freelance projects
+            Open to full-time roles
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export default function Image() {
               marginTop: 8,
             }}
           >
-            Freelance React & Next.js Engineer
+            React & Next.js Engineer
           </div>
           <div
             style={{

@@ -6,9 +6,10 @@ const sections = [
   { id: "hero", label: "Hero" },
   { id: "about", label: "About" },
   { id: "work", label: "Work" },
-  { id: "projects", label: "Projects" },
   { id: "tech", label: "Skills" },
+  { id: "projects", label: "Projects" },
   { id: "services", label: "Services" },
+  { id: "process", label: "Process" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -16,22 +17,40 @@ export function SectionIndicator() {
   const [active, setActive] = useState("hero");
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+    let frame = 0;
 
-    sections.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActive(id);
-        },
-        { threshold: 0.4 }
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
+    // Active = last section whose top has crossed the viewport's middle.
+    // Works for sections of any height and in both scroll directions.
+    const update = () => {
+      frame = 0;
+      const line = window.innerHeight / 2;
+      let current = sections[0].id;
+      for (const { id } of sections) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= line) current = id;
+      }
+      // Bottom of page: the last section may be too short to reach the middle.
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2
+      ) {
+        current = sections[sections.length - 1].id;
+      }
+      setActive(current);
+    };
 
-    return () => observers.forEach((obs) => obs.disconnect());
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
@@ -54,9 +73,10 @@ export function SectionIndicator() {
               style={{
                 width: isActive ? "20px" : "6px",
                 height: "2px",
-                backgroundColor: isActive
-                  ? "var(--accent)"
+                background: isActive
+                  ? "var(--btn-gradient)"
                   : "var(--border)",
+                boxShadow: isActive ? "0 0 10px var(--accent)" : "none",
               }}
             />
           </a>

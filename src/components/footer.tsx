@@ -4,17 +4,14 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 export function Footer() {
   return (
-    <footer
-      className="border-t"
-      style={{ borderColor: "var(--border)" }}
-      role="contentinfo"
-    >
+    <footer role="contentinfo">
+      <div className="glow-divider" aria-hidden="true" />
       <div className="container-main py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Left: Monogram + copyright */}
         <div className="flex items-center gap-3">
           <span
-            className="font-mono text-sm font-bold"
-            style={{ color: "var(--accent)" }}
+            className="flex items-center justify-center w-7 h-7 rounded-lg font-mono text-[10px] font-bold text-white"
+            style={{ background: "var(--btn-gradient)" }}
           >
             DP
           </span>

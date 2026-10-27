@@ -1,5 +1,6 @@
-import { Activity, Gauge, Rocket, Network } from "lucide-react";
+import { Activity, Gauge, Rocket, Network, ArrowRight } from "lucide-react";
 import { FadeUp } from "@/components/motion-wrapper";
+import { SectionHeading } from "@/components/section-heading";
 
 interface Service {
   Icon: typeof Activity;
@@ -47,72 +48,46 @@ export function ServicesSection() {
       aria-labelledby="services-heading"
     >
       <div className="container-main">
-        <FadeUp>
-          <p
-            className="font-mono text-xs mb-3 flex items-center gap-2"
-            style={{ color: "var(--accent)" }}
-          >
-            <span
-              className="inline-block w-5 h-px"
-              style={{ backgroundColor: "var(--accent)" }}
-            />
-            Services
-          </p>
-          <h2
-            id="services-heading"
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
-            style={{ color: "var(--text-primary)" }}
-          >
-            How I can help.
-          </h2>
-          <p
-            className="text-base mb-12 max-w-2xl"
-            style={{ color: "var(--text-muted)" }}
-          >
-            Focused, senior-level frontend help — whether you&apos;re building
-            from scratch, scaling, or fixing what&apos;s slow.
-          </p>
-        </FadeUp>
+        <SectionHeading
+          id="services-heading"
+          eyebrow="Services"
+          title={
+            <>
+              How I can <span className="gradient-text">help</span>.
+            </>
+          }
+          description={
+            <>
+              Focused, senior-level frontend help — whether you&apos;re building
+              from scratch, scaling, or fixing what&apos;s slow.
+            </>
+          }
+        />
 
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-4">
           {services.map(({ Icon, title, description, fit }, index) => (
             <FadeUp key={title} delay={index * 0.1}>
-              <div
-                className="h-full rounded-xl p-6 card-hover"
-                style={{
-                  background: "var(--surface-elevated)",
-                  border: "1px solid var(--border)",
-                }}
-              >
-                <div
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-lg mb-4"
-                  style={{
-                    background: "rgba(59,130,246,0.08)",
-                    border: "1px solid rgba(59,130,246,0.15)",
-                  }}
-                >
-                  <Icon
-                    size={20}
-                    style={{ color: "var(--accent)" }}
-                    aria-hidden="true"
-                  />
-                </div>
+              <div className="glass glow-card h-full flex flex-col rounded-2xl p-7">
+                <span className="icon-badge mb-5" aria-hidden="true">
+                  <Icon size={20} />
+                </span>
                 <h3
-                  className="text-base font-bold mb-2"
+                  className="text-lg font-bold mb-2"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {title}
                 </h3>
                 <p
-                  className="text-sm leading-relaxed mb-4"
+                  className="text-sm leading-relaxed mb-5 flex-1"
                   style={{ color: "var(--text-muted)" }}
                 >
                   {description}
                 </p>
                 <p
-                  className="text-sm font-medium"
-                  style={{ color: "var(--text-primary)" }}
+                  className="flex items-center gap-2 text-sm font-medium pt-4 border-t"
+                  style={{ color: "var(--accent)", borderColor: "var(--glass-border)" }}
                 >
+                  <ArrowRight size={14} aria-hidden="true" />
                   {fit}
                 </p>
               </div>

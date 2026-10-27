@@ -2,22 +2,23 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AuroraBackground } from "@/components/aurora-background";
+import { PointerGlow } from "@/components/pointer-glow";
 import { Toaster } from "sonner";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://darpanpatel.dev"),
   title: {
-    default: "Darpan Patel — Freelance React & Next.js Engineer",
+    default: "Darpan Patel — React & Next.js Engineer",
     template: "%s | Darpan Patel",
   },
   description:
-    "Freelance React & Next.js engineer with 5+ years building fast, real-time, scalable web apps for healthcare, education, and business teams. Available for dashboards, performance audits, and full product builds.",
+    "React & Next.js engineer with 5+ years building fast, real-time, scalable web apps for healthcare, education, and business teams. Open to full-time frontend roles.",
   keywords: [
-    "Freelance React Developer",
-    "Freelance Next.js Developer",
     "Frontend Developer",
-    "React Consultant",
+    "React Developer",
+    "Next.js Developer",
     "Real-time Dashboards",
     "WebSocket",
     "Frontend Performance Optimization",
@@ -27,7 +28,8 @@ export const metadata: Metadata = {
     "TanStack Query",
     "Strapi CMS",
     "Darpan Patel",
-    "Hire React Developer",
+    "Senior Frontend Engineer",
+    "Open to Work",
   ],
   authors: [{ name: "Darpan Patel" }],
   creator: "Darpan Patel",
@@ -35,17 +37,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://darpanpatel.dev",
-    title: "Darpan Patel — Freelance React & Next.js Engineer",
+    title: "Darpan Patel — React & Next.js Engineer",
     description:
-      "Fast, real-time React apps that don't break under pressure. Freelance frontend engineering for data-heavy products — dashboards, performance audits, and full builds.",
+      "Fast, real-time React apps that don't break under pressure. Frontend engineer with 5+ years on data-heavy products, open to full-time roles.",
     siteName: "Darpan Patel",
     // OG image is generated dynamically — see src/app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
-    title: "Darpan Patel — Freelance React & Next.js Engineer",
+    title: "Darpan Patel — React & Next.js Engineer",
     description:
-      "Fast, real-time React apps that don't break under pressure. Freelance frontend engineering for data-heavy products — dashboards, performance audits, and full builds.",
+      "Fast, real-time React apps that don't break under pressure. Frontend engineer with 5+ years on data-heavy products, open to full-time roles.",
     // Twitter image is generated dynamically — see src/app/twitter-image.tsx
   },
   robots: {
@@ -80,6 +82,8 @@ export default function RootLayout({
           disableTransitionOnChange={false}
           storageKey="darpan-theme"
         >
+          <AuroraBackground />
+          <PointerGlow />
           {children}
           <Toaster
             position="bottom-right"

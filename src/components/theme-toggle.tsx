@@ -16,7 +16,7 @@ export function ThemeToggle() {
     return (
       <button
         aria-label="Toggle theme"
-        className="w-9 h-9 flex items-center justify-center rounded-lg opacity-0"
+        className="w-9 h-9 flex items-center justify-center rounded-full opacity-0"
       />
     );
   }
@@ -25,12 +25,8 @@ export function ThemeToggle() {
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      className="w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-200 hover:opacity-70"
-      style={{
-        color: "var(--text-muted)",
-        border: "1px solid var(--border)",
-        background: "var(--surface)",
-      }}
+      className="glass w-9 h-9 flex items-center justify-center rounded-full transition-all duration-200 hover:scale-105"
+      style={{ color: "var(--text-primary)" }}
     >
       {theme === "dark" ? (
         <Sun size={16} />

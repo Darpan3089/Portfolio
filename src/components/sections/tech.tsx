@@ -1,12 +1,16 @@
+import { Code2, Database, Radio, Gauge, Cloud, Wrench } from "lucide-react";
 import { FadeUp } from "@/components/motion-wrapper";
+import { SectionHeading } from "@/components/section-heading";
 
 interface TechGroup {
+  Icon: typeof Code2;
   label: string;
   items: string[];
 }
 
 const techStack: TechGroup[] = [
   {
+    Icon: Code2,
     label: "Languages & Frameworks",
     items: [
       "TypeScript",
@@ -21,6 +25,7 @@ const techStack: TechGroup[] = [
     ],
   },
   {
+    Icon: Database,
     label: "State, Data & APIs",
     items: [
       "Redux Toolkit",
@@ -35,6 +40,7 @@ const techStack: TechGroup[] = [
     ],
   },
   {
+    Icon: Radio,
     label: "UI & Real-Time",
     items: [
       "Tailwind CSS",
@@ -47,6 +53,7 @@ const techStack: TechGroup[] = [
     ],
   },
   {
+    Icon: Gauge,
     label: "Performance & Quality",
     items: [
       "Code Splitting",
@@ -59,6 +66,7 @@ const techStack: TechGroup[] = [
     ],
   },
   {
+    Icon: Cloud,
     label: "Cloud & DevOps",
     items: [
       "AWS (EC2, Route 53, CloudFront)",
@@ -72,6 +80,7 @@ const techStack: TechGroup[] = [
     ],
   },
   {
+    Icon: Wrench,
     label: "Databases, Tools & AI",
     items: [
       "MySQL",
@@ -96,53 +105,34 @@ export function TechSection() {
       aria-labelledby="tech-heading"
     >
       <div className="container-main">
-        <FadeUp>
-          <p
-            className="font-mono text-xs mb-3 flex items-center gap-2"
-            style={{ color: "var(--accent)" }}
-          >
-            <span
-              className="inline-block w-5 h-px"
-              style={{ backgroundColor: "var(--accent)" }}
-            />
-            Skills
-          </p>
-          <h2
-            id="tech-heading"
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-12"
-            style={{ color: "var(--text-primary)" }}
-          >
-            My tech stack.
-          </h2>
-        </FadeUp>
+        <SectionHeading
+          id="tech-heading"
+          eyebrow="Skills"
+          title={
+            <>
+              My tech <span className="gradient-text">stack</span>.
+            </>
+          }
+        />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {techStack.map((group, groupIndex) => (
-            <FadeUp key={group.label} delay={groupIndex * 0.1}>
-              <div
-                className="rounded-xl p-6"
-                style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--border)",
-                }}
-              >
-                <h3
-                  className="font-mono text-xs font-semibold uppercase tracking-widest mb-5"
-                  style={{ color: "var(--accent)" }}
-                >
-                  {group.label}
-                </h3>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {techStack.map(({ Icon, label, items }, groupIndex) => (
+            <FadeUp key={label} delay={groupIndex * 0.08}>
+              <div className="glass glow-card h-full rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="icon-badge" aria-hidden="true">
+                    <Icon size={18} />
+                  </span>
+                  <h3
+                    className="text-sm font-semibold"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {label}
+                  </h3>
+                </div>
                 <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <span
-                      key={item}
-                      className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors"
-                      style={{
-                        background: "var(--bg)",
-                        border: "1px solid var(--border)",
-                        color: "var(--text-muted)",
-                      }}
-                    >
+                  {items.map((item) => (
+                    <span key={item} className="chip">
                       {item}
                     </span>
                   ))}
