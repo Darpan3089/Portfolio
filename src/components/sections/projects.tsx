@@ -32,18 +32,20 @@ const projects: Project[] = [
     slug: "core-health-physiotherapy",
     title: "Core Health Physiotherapy",
     description:
-      "A full-stack patient management and booking platform for physiotherapy clinics with real-time appointment scheduling, patient records, and billing.",
+      "A healthcare platform with patient-facing physiotherapy workflows and an admin panel, built on a React and Redux frontend wired to REST APIs and MySQL-backed services.",
     tags: ["React", "Express.js", "MySQL", "Tailwind CSS", "Redux"],
     image: "/projects/physio.png",
+    liveUrl: "https://core-health-physiotherapy.vercel.app",
     featured: true,
   },
   {
     slug: "gas-flow-solution",
-    title: "Gas Flow Solution",
+    title: "Gas Flow IoT Dashboard",
     description:
-      "Industrial IoT dashboard for monitoring gas flow metrics in real-time. Features live data visualization, alerting thresholds, and historical reporting.",
+      "A responsive real-time IoT monitoring dashboard with WebSocket-based live updates, interactive Chart.js visualizations, and reusable components for monitoring and reporting.",
     tags: ["React", "TypeScript", "Chart.js", "WebSockets", "Node.js"],
     image: "/projects/gasflow.png",
+    liveUrl: "https://gas-flow-solution.vercel.app",
     featured: true,
   },
   {

@@ -12,10 +12,11 @@ export const metadata: Metadata = {
     template: "%s | Darpan Patel",
   },
   description:
-    "Freelance React & Next.js engineer with 5+ years building fast, real-time, data-heavy web apps for healthcare, fintech, and IoT teams. Available for dashboards, performance audits, and full product builds.",
+    "Freelance React & Next.js engineer with 5+ years building fast, real-time, scalable web apps for healthcare, education, and business teams. Available for dashboards, performance audits, and full product builds.",
   keywords: [
     "Freelance React Developer",
     "Freelance Next.js Developer",
+    "Frontend Developer",
     "React Consultant",
     "Real-time Dashboards",
     "WebSocket",
@@ -23,6 +24,8 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "TypeScript",
+    "TanStack Query",
+    "Strapi CMS",
     "Darpan Patel",
     "Hire React Developer",
   ],

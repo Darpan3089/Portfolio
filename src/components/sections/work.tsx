@@ -15,36 +15,18 @@ interface WorkEntry {
 const workHistory: WorkEntry[] = [
   {
     company: "Kode Creators Pvt. Ltd.",
-    role: "Software Engineer",
-    period: "Dec 2025 — Present",
+    role: "Frontend Developer",
+    period: "Sep 2022 — Present",
     current: true,
     achievements: [
-      "Lead frontend development of healthcare booking and practice-management platforms with React.js, TypeScript, and Tailwind CSS, serving clinical workflows for multiple provider organisations.",
-      "Architected scalable admin panel architectures with role-based access control, advanced data tables, and dynamic views — improving operator throughput on high-volume workflows.",
-      "Migrated server-state management to TanStack React Query, introducing intelligent caching, background refetching, and optimistic updates that cut redundant API calls.",
-      "Established a reusable component library and conventions adopted across modules, accelerating feature delivery for the wider engineering team.",
-    ],
-  },
-  {
-    company: "LedgerLine Technologies",
-    role: "Frontend Developer",
-    period: "May 2025 — Nov 2025",
-    achievements: [
-      "Built blockchain dApps and Telegram Mini Apps with React.js and Next.js, delivering decentralised solutions and mobile web experiences focused on performance and security.",
-      "Developed real-time trading interfaces with WebSocket feeds and TradingView charts — live order books, trade history, and price tickers handling sub-second updates without UI jank.",
-      "Reduced page load time by ~30% through bundle analysis, dynamic imports, image optimisation, and route-level caching.",
-      "Implemented secure auth flows: JWT-based session management, protected routes, and role-based access for trader and admin views.",
-    ],
-  },
-  {
-    company: "Kode Creators Pvt. Ltd.",
-    role: "Frontend Developer",
-    period: "Sep 2022 — May 2025",
-    achievements: [
-      "Delivered a scalable healthcare booking and POS platform with React.js, Next.js, and TypeScript — used daily by clinic staff for appointments, billing, and patient records.",
-      "Owned the data-fetching architecture using SWR stale-while-revalidate patterns, reducing API load and enabling near-instant navigation between cached views.",
-      "Built admin dashboards with real-time appointment and transaction tracking, replacing manual reconciliation processes.",
-      "Applied React Suspense, lazy loading, and memoisation to keep the bundle lean as the app scaled to dozens of routes and modules.",
+      "Own frontend development of healthcare booking, patient management, billing, and POS platforms using React.js, Next.js, TypeScript, and Tailwind CSS — supporting appointments, patient records, and clinical workflows.",
+      "Implemented a custom headless Strapi CMS with tailored content types and APIs, enabling instant website content updates across the Next.js frontend with no developer involvement.",
+      "Built real-time updates with WebSockets and Socket.io for live appointment and operational dashboards.",
+      "Migrated data fetching from SWR to TanStack Query, adding caching, request deduplication, background refetching, and optimistic updates to cut redundant API calls.",
+      "Optimised performance across routes and feature modules with code splitting, lazy loading, React Suspense, and memoisation.",
+      "Integrated REST APIs for complex workflows — pagination, filtering, mutations, and loading and error states.",
+      "Deployed and maintained apps on AWS (EC2, Route 53, CloudFront) with Nginx, Apache, PM2, and GitHub Actions CI/CD, plus Vercel and Netlify.",
+      "Use Claude Code and Cursor for implementation, debugging, and refactoring, reviewing all generated code for TypeScript safety and maintainability.",
     ],
   },
   {
@@ -52,10 +34,12 @@ const workHistory: WorkEntry[] = [
     role: "Full Stack Developer",
     period: "Sep 2021 — Aug 2022",
     achievements: [
-      "Built end-to-end Academic ERP modules with React.js, Node.js, Express.js, and MySQL — covering student lifecycle, course enrollment, and administrative workflows.",
-      "Integrated the HDFC payment gateway for automated fee collection, reconciliation, and transaction tracking, eliminating manual finance work for the institution.",
-      "Tuned MySQL queries through indexing and schema refactoring, significantly improving report-generation speed for admin users.",
-      "Authored RESTful APIs with input validation, structured error handling, and Swagger documentation for downstream consumers.",
+      "Developed end-to-end Academic ERP applications with React.js, Node.js, Express.js, and MySQL for student, course, faculty, and administrative workflows.",
+      "Built reusable React components and responsive, role-based interfaces for multiple ERP modules.",
+      "Designed and integrated RESTful APIs with request validation, structured error handling, and authentication middleware.",
+      "Integrated the HDFC payment gateway for automated fee collection, transaction status tracking, and reconciliation.",
+      "Implemented role-based access control (RBAC) for administrator, faculty, and student applications.",
+      "Designed MySQL database structures and authored Swagger/OpenAPI documentation to improve collaboration between frontend and backend teams.",
     ],
   },
 ];

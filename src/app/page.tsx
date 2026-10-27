@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title:
     "Darpan Patel | Freelance React & Next.js Engineer | Real-Time Web Apps",
   description:
-    "Freelance React & Next.js engineer with 5+ years building fast, real-time, data-heavy web apps for healthcare, fintech, and IoT teams. Available for dashboards, performance audits, and full product builds. Replies within 24 hours.",
+    "Freelance React & Next.js engineer with 5+ years building fast, real-time, scalable web apps for healthcare, education, and business teams. Available for dashboards, performance audits, and full product builds. Replies within 24 hours.",
 };
 
 export default function HomePage() {

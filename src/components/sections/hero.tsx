@@ -56,10 +56,10 @@ export function HeroSection() {
             style={{ color: "var(--text-muted)", lineHeight: "1.7" }}
           >
             I&apos;m Darpan — a frontend engineer with 5+ years building
-            data-heavy products for healthcare, fintech, and IoT teams. From live
-            trading dashboards to clinical booking platforms, I turn complex,
-            real-time requirements into interfaces that stay fast, reliable, and
-            genuinely pleasant to use.
+            scalable products for healthcare, education, and business teams. From
+            live operational dashboards to clinical booking and POS platforms, I
+            turn complex, real-time requirements into interfaces that stay fast,
+            reliable, and genuinely pleasant to use.
           </p>
 
           {/* CTAs */}

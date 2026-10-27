@@ -13,7 +13,7 @@ const services: Service[] = [
     Icon: Activity,
     title: "Real-time dashboards & data apps",
     description:
-      "Live dashboards, trading interfaces, and monitoring tools built on WebSocket feeds and rich charting, with sub-second updates that stay smooth under heavy load.",
+      "Live operational dashboards, IoT monitoring tools, and booking systems built on WebSocket feeds and rich charting, with updates that stay smooth under heavy load.",
     fit: "Good fit if your UI can't keep up with live data.",
   },
   {
@@ -27,7 +27,7 @@ const services: Service[] = [
     Icon: Rocket,
     title: "Full product builds",
     description:
-      "End-to-end React/Next.js development, from architecture and design system through to deployment. I take ideas to production-ready, scalable apps.",
+      "End-to-end React/Next.js development, from architecture and headless CMS setup through to deployment on AWS, Vercel, or Netlify. I take ideas to production-ready, scalable apps.",
     fit: "Good fit if you need to go from zero to launched.",
   },
   {

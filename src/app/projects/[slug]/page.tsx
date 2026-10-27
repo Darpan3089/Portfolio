@@ -41,6 +41,7 @@ const projects: Project[] = [
     description:
       "A full-stack patient management and online booking platform for a physiotherapy clinic chain.",
     tags: ["React", "Express.js", "MySQL", "Tailwind CSS", "Redux", "Stripe"],
+    liveUrl: "https://core-health-physiotherapy.vercel.app",
     problem:
       "The clinic was using paper-based patient records and phone-only appointment booking. This created bottlenecks at reception, led to scheduling errors, and made patient history difficult to access during appointments. The solution needed to be simple enough for clinic staff with minimal technical literacy while powerful enough to handle a growing patient database.",
     approach:
@@ -52,10 +53,11 @@ const projects: Project[] = [
   },
   {
     slug: "gas-flow-solution",
-    title: "Gas Flow Solution",
+    title: "Gas Flow IoT Dashboard",
     description:
       "Industrial IoT dashboard for monitoring gas flow metrics in real-time with alerting and historical reporting.",
     tags: ["React", "TypeScript", "Chart.js", "WebSockets", "Node.js", "InfluxDB"],
+    liveUrl: "https://gas-flow-solution.vercel.app",
     problem:
       "An industrial gas distribution company needed real-time visibility into flow rates, pressure readings, and valve states across multiple monitoring stations. Alert conditions were being missed because operators had to check multiple disconnected systems. Historical data was stored in spreadsheets, making trend analysis impossible.",
     approach:
