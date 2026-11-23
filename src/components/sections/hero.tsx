@@ -1,28 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Zap, Cloud } from "lucide-react";
+import { ArrowUpRight, Zap, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const heroStack = ["React", "Next.js", "TypeScript", "Node.js", "AWS"];
+const heroStack = ["React", "Next.js", "TypeScript", "Node.js", "Claude API"];
 
 const marqueeItems = [
   "React.js",
   "Next.js",
   "TypeScript",
   "Node.js",
+  "Claude API",
   "TanStack Query",
   "Redux Toolkit",
   "Tailwind CSS",
+  "shadcn/ui",
   "WebSockets",
   "Socket.io",
+  "NestJS",
+  "PostgreSQL",
   "Strapi CMS",
-  "Chart.js",
+  "Playwright",
   "AWS",
   "GitHub Actions",
-  "Framer Motion",
 ];
 
 // Decorative bar heights (%) for the mock live chart
@@ -97,10 +100,10 @@ function LiveDashboardCard() {
               className="text-sm font-semibold leading-tight mb-1"
               style={{ color: "var(--text-primary)" }}
             >
-              Frontend Dev
+              50+ clinics
             </p>
             <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-              @ Kode Creators
+              use products I built
             </p>
           </div>
         </div>
@@ -164,8 +167,8 @@ function LiveDashboardCard() {
         className="glass glass-strong absolute -right-4 -top-5 hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium"
         style={{ color: "var(--text-primary)" }}
       >
-        <Cloud size={14} style={{ color: "var(--accent-3)" }} />
-        AWS · CloudFront
+        <Sparkles size={14} style={{ color: "var(--accent-3)" }} />
+        Claude API · human-reviewed
       </motion.div>
     </motion.div>
   );
@@ -193,7 +196,7 @@ export function HeroSection() {
               style={{ color: "var(--text-muted)" }}
             >
               <span className="pulse-dot" aria-hidden="true" />
-              Open to full-time roles
+              Available to join immediately
             </div>
 
             {/* Eyebrow — typewriter effect */}
@@ -202,7 +205,7 @@ export function HeroSection() {
               style={{ color: "var(--accent)" }}
             >
               <span className="typewriter">
-                React &amp; Next.js Engineer
+                Senior Frontend Developer
               </span>
             </p>
 
@@ -225,10 +228,11 @@ export function HeroSection() {
               style={{ color: "var(--text-muted)", lineHeight: "1.7" }}
             >
               I&apos;m Darpan — a frontend engineer with 5+ years building
-              scalable products for healthcare, education, and business teams. From
-              live operational dashboards to clinical booking and POS platforms, I
-              turn complex, real-time requirements into interfaces that stay fast,
-              reliable, and genuinely pleasant to use.
+              healthcare SaaS, ERP, and business products with React, Next.js, and
+              TypeScript. From appointment booking, patient records, and POS
+              platforms to live dashboards and AI-drafted clinical reports on the
+              Claude API, I turn complex requirements into interfaces that stay
+              fast, reliable, and safe to use.
             </p>
 
             {/* CTAs */}

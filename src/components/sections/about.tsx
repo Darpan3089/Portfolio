@@ -3,8 +3,8 @@ import { FadeUp } from "@/components/motion-wrapper";
 import { SectionHeading } from "@/components/section-heading";
 
 const facts = [
-  { Icon: Layers, label: "Domains", value: "Healthcare · Education · Business" },
-  { Icon: Code2, label: "Tech focus", value: "React / Next.js / TypeScript" },
+  { Icon: Layers, label: "Domains", value: "Healthcare SaaS · ERP · Business" },
+  { Icon: Code2, label: "Tech focus", value: "React / Next.js / TypeScript / AI" },
   { Icon: MapPin, label: "Based in", value: "Vadodara, Gujarat, India" },
 ];
 
@@ -40,21 +40,25 @@ export function AboutSection() {
                   <strong style={{ color: "var(--text-primary)" }}>Vadodara, Gujarat, India</strong>,
                   with{" "}
                   <strong style={{ color: "var(--text-primary)" }}>5+ years of experience</strong>{" "}
-                  building scalable web applications across healthcare, education, and business
-                  platforms. I specialize in React, Next.js, TypeScript, and Node.js, with a focus
-                  on frontend architecture, performance optimization, real-time applications, and
-                  REST API integration.
+                  building healthcare, ERP, and business products. I specialize in React, Next.js,
+                  and TypeScript, with a focus on frontend architecture, real-time dashboards,
+                  RBAC-driven multi-role interfaces, and REST API integration — and I work across
+                  the stack with Node.js, NestJS, and PostgreSQL.
                 </p>
                 <p>
-                  Currently at{" "}
-                  <strong style={{ color: "var(--text-primary)" }}>Kode Creators</strong>, I own
-                  frontend development of healthcare booking, patient management, billing, and POS
-                  platforms. I built a headless{" "}
-                  <strong style={{ color: "var(--text-primary)" }}>Strapi CMS</strong> that lets
-                  the team update site content with no developer involvement, added live dashboards
-                  over WebSockets, and migrated data fetching from SWR to{" "}
-                  <strong style={{ color: "var(--text-primary)" }}>TanStack Query</strong> for
-                  caching, deduplication, and optimistic updates.
+                  At{" "}
+                  <strong style={{ color: "var(--text-primary)" }}>Kode Creators</strong>, I led
+                  frontend development of 5+ healthcare products — appointment booking, patient
+                  management, billing, and POS — used by 50+ clinics. I built{" "}
+                  <strong style={{ color: "var(--text-primary)" }}>
+                    AI report generation on the Claude API
+                  </strong>{" "}
+                  that drafts discharge summaries, lab and radiology reports, and management
+                  reports, with clinician review, PII masking, and per-hospital usage controls. I
+                  also defined a shared component library that cut new-screen development time by
+                  about 40%, and moved 12+ modules from SWR to{" "}
+                  <strong style={{ color: "var(--text-primary)" }}>TanStack Query</strong>,
+                  reducing redundant API calls by about 35%.
                 </p>
                 <p>
                   I also handle what happens after the code is written — deploying and maintaining
@@ -62,7 +66,7 @@ export function AboutSection() {
                   <strong style={{ color: "var(--text-primary)" }}>AWS</strong> with Nginx, PM2,
                   and GitHub Actions CI/CD, as well as Vercel and Netlify. I use Claude Code and
                   Cursor to move faster, and review every line they generate for type safety and
-                  maintainability.
+                  maintainability, and test with Vitest, React Testing Library, and Playwright.
                 </p>
               </div>
             </div>
@@ -94,17 +98,17 @@ export function AboutSection() {
                 style={{ color: "var(--text-muted)" }}
               >
                 <span className="pulse-dot" aria-hidden="true" />
-                Current role
+                Availability
               </span>
               <div>
                 <p
                   className="text-xl font-bold mb-1"
                   style={{ color: "var(--text-primary)" }}
                 >
-                  Frontend Developer
+                  Join immediately
                 </p>
                 <p className="text-sm" style={{ color: "var(--accent)" }}>
-                  @ Kode Creators
+                  Remote · Ahmedabad · Pune · Bangalore · Hyderabad
                 </p>
               </div>
             </div>

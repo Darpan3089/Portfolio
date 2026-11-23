@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // Image metadata
-export const alt = "Darpan Patel — React & Next.js Engineer";
+export const alt = "Darpan Patel — Senior Frontend Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -71,7 +71,7 @@ export default function Image() {
                 backgroundColor: "#10b981",
               }}
             />
-            Open to full-time roles
+            Available to join immediately
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export default function Image() {
               marginTop: 8,
             }}
           >
-            React & Next.js Engineer
+            Senior Frontend Developer
           </div>
           <div
             style={{
@@ -108,8 +108,8 @@ export default function Image() {
               maxWidth: 900,
             }}
           >
-            Fast, real-time React apps that don&apos;t break under pressure —
-            dashboards, performance audits & full builds.
+            Healthcare SaaS, real-time dashboards & AI features built with
+            React, Next.js and the Claude API.
           </div>
         </div>
 
@@ -125,7 +125,7 @@ export default function Image() {
         >
           <div style={{ display: "flex" }}>darpanpatel.dev</div>
           <div style={{ display: "flex", gap: 12 }}>
-            {["React", "Next.js", "TypeScript"].map((t) => (
+            {["React", "Next.js", "TypeScript", "AI"].map((t) => (
               <div
                 key={t}
                 style={{

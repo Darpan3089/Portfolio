@@ -277,9 +277,11 @@ export function ContactSection() {
                   style={{ color: "var(--text-primary)" }}
                 >
                   <span className="pulse-dot" aria-hidden="true" />
-                  Open to full-time roles
+                  Available to join immediately
                 </p>
                 <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+                  Remote · Ahmedabad · Pune · Bangalore · Hyderabad
+                  <br />
                   Based in Vadodara, India · Replies within 24 hours
                 </p>
               </div>

@@ -548,7 +548,7 @@
     border-right: 2px solid var(--accent);
     /* steps() ≈ character count of the hero eyebrow — keep in sync if the text changes */
     animation:
-      typing 2.3s steps(34) 0.4s both,
+      typing 2.3s steps(25) 0.4s both,
       cursor-blink 0.75s step-end infinite;
     max-width: max-content;
   }

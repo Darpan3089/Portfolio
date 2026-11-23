@@ -1,4 +1,4 @@
-import { Activity, Gauge, Rocket, Network, ArrowRight } from "lucide-react";
+import { Activity, Sparkles, Rocket, Network, ArrowRight } from "lucide-react";
 import { FadeUp } from "@/components/motion-wrapper";
 import { SectionHeading } from "@/components/section-heading";
 
@@ -11,32 +11,32 @@ interface Service {
 
 const services: Service[] = [
   {
+    Icon: Sparkles,
+    title: "AI features you can trust",
+    description:
+      "LLM features on the Claude API that are safe to ship in regulated products: PII masking before data leaves the server, versioned prompts, human review before anything is saved, plus quotas, usage tracking, and audit logs.",
+    fit: "Good fit if you want AI in your product without the risk.",
+  },
+  {
     Icon: Activity,
     title: "Real-time dashboards & data apps",
     description:
-      "Live operational dashboards, IoT monitoring tools, and booking systems built on WebSocket feeds and rich charting, with updates that stay smooth under heavy load.",
+      "Live appointment, operations, and IoT dashboards built on WebSocket feeds and rich charting, replacing manual refresh with updates that stay smooth under load.",
     fit: "Good fit if your UI can't keep up with live data.",
   },
   {
-    Icon: Gauge,
-    title: "Performance audits & optimization",
+    Icon: Network,
+    title: "Frontend architecture & performance",
     description:
-      "A deep diagnosis of your React/Next.js app (bundle size, render bottlenecks, caching, Core Web Vitals) followed by the fixes. Faster loads, fewer re-renders, happier users.",
-    fit: "Good fit if your app got slower as it grew.",
+      "Shared component libraries, TanStack Query data fetching, and code splitting that keep shipping fast as the codebase grows. My last component library cut new-screen build time by about 40%.",
+    fit: "Good fit if your frontend got slower or harder to change.",
   },
   {
     Icon: Rocket,
     title: "Full product builds",
     description:
-      "End-to-end React/Next.js development, from architecture and headless CMS setup through to deployment on AWS, Vercel, or Netlify. I take ideas to production-ready, scalable apps.",
+      "End-to-end React/Next.js development with Node.js or NestJS APIs and PostgreSQL, from architecture and RBAC to deployment on AWS, Vercel, or Netlify.",
     fit: "Good fit if you need to go from zero to launched.",
-  },
-  {
-    Icon: Network,
-    title: "Frontend architecture & scaling",
-    description:
-      "Component libraries, state management, and code conventions that scale across a growing team, so shipping stays fast as the codebase grows.",
-    fit: "Good fit if your frontend is getting hard to maintain.",
   },
 ];
 

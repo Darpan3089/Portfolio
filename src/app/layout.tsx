@@ -10,12 +10,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://darpanpatel.dev"),
   title: {
-    default: "Darpan Patel — React & Next.js Engineer",
+    default: "Darpan Patel — Senior Frontend Developer",
     template: "%s | Darpan Patel",
   },
   description:
-    "React & Next.js engineer with 5+ years building fast, real-time, scalable web apps for healthcare, education, and business teams. Open to full-time frontend roles.",
+    "Senior Frontend Developer with 5+ years building healthcare SaaS, ERP, and business products with React, Next.js, and TypeScript — plus AI features on the Claude API. Available to join immediately.",
   keywords: [
+    "Senior Frontend Developer",
     "Frontend Developer",
     "React Developer",
     "Next.js Developer",
@@ -26,9 +27,11 @@ export const metadata: Metadata = {
     "Next.js",
     "TypeScript",
     "TanStack Query",
-    "Strapi CMS",
+    "Claude API",
+    "AI Integrations",
+    "Healthcare SaaS",
+    "Node.js",
     "Darpan Patel",
-    "Senior Frontend Engineer",
     "Open to Work",
   ],
   authors: [{ name: "Darpan Patel" }],
@@ -37,17 +40,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://darpanpatel.dev",
-    title: "Darpan Patel — React & Next.js Engineer",
+    title: "Darpan Patel — Senior Frontend Developer",
     description:
-      "Fast, real-time React apps that don't break under pressure. Frontend engineer with 5+ years on data-heavy products, open to full-time roles.",
+      "React, Next.js & TypeScript developer with 5+ years on healthcare SaaS and real-time products, including AI report generation on the Claude API. Available immediately.",
     siteName: "Darpan Patel",
     // OG image is generated dynamically — see src/app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
-    title: "Darpan Patel — React & Next.js Engineer",
+    title: "Darpan Patel — Senior Frontend Developer",
     description:
-      "Fast, real-time React apps that don't break under pressure. Frontend engineer with 5+ years on data-heavy products, open to full-time roles.",
+      "React, Next.js & TypeScript developer with 5+ years on healthcare SaaS and real-time products, including AI report generation on the Claude API. Available immediately.",
     // Twitter image is generated dynamically — see src/app/twitter-image.tsx
   },
   robots: {
