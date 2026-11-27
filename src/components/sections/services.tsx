@@ -35,7 +35,7 @@ const services: Service[] = [
     Icon: Rocket,
     title: "Full product builds",
     description:
-      "End-to-end React/Next.js development with Node.js or NestJS APIs and PostgreSQL, from architecture and RBAC to deployment on AWS, Vercel, or Netlify.",
+      "End-to-end React/Next.js development with Node.js and Express APIs on MySQL or MongoDB, from schema design and RBAC to payments and deployment on AWS, Vercel, or Netlify.",
     fit: "Good fit if you need to go from zero to launched.",
   },
 ];
@@ -58,7 +58,7 @@ export function ServicesSection() {
           }
           description={
             <>
-              Focused, senior-level frontend help — whether you&apos;re building
+              Focused, senior-level full-stack help — whether you&apos;re building
               from scratch, scaling, or fixing what&apos;s slow.
             </>
           }

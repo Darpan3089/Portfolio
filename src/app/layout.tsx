@@ -10,27 +10,30 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://darpanpatel.dev"),
   title: {
-    default: "Darpan Patel — Senior Frontend Developer",
+    default: "Darpan Patel — Full-Stack Developer",
     template: "%s | Darpan Patel",
   },
   description:
-    "Senior Frontend Developer with 5+ years building healthcare SaaS, ERP, and business products with React, Next.js, and TypeScript — plus AI features on the Claude API. Available to join immediately.",
+    "Full-Stack Developer with 5+ years building healthcare and EdTech products end-to-end with React, Next.js, Node.js, and TypeScript — plus production AI features on the Claude API.",
   keywords: [
-    "Senior Frontend Developer",
-    "Frontend Developer",
+    "Full-Stack Developer",
+    "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
+    "Node.js Developer",
+    "Express.js",
+    "REST APIs",
     "Real-time Dashboards",
     "WebSocket",
-    "Frontend Performance Optimization",
     "React",
     "Next.js",
     "TypeScript",
+    "MySQL",
+    "MongoDB",
     "TanStack Query",
     "Claude API",
     "AI Integrations",
     "Healthcare SaaS",
-    "Node.js",
     "Darpan Patel",
     "Open to Work",
   ],
@@ -40,17 +43,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://darpanpatel.dev",
-    title: "Darpan Patel — Senior Frontend Developer",
+    title: "Darpan Patel — Full-Stack Developer",
     description:
-      "React, Next.js & TypeScript developer with 5+ years on healthcare SaaS and real-time products, including AI report generation on the Claude API. Available immediately.",
+      "React, Next.js & Node.js developer with 5+ years shipping healthcare and EdTech products end-to-end, including AI report generation on the Claude API.",
     siteName: "Darpan Patel",
     // OG image is generated dynamically — see src/app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
-    title: "Darpan Patel — Senior Frontend Developer",
+    title: "Darpan Patel — Full-Stack Developer",
     description:
-      "React, Next.js & TypeScript developer with 5+ years on healthcare SaaS and real-time products, including AI report generation on the Claude API. Available immediately.",
+      "React, Next.js & Node.js developer with 5+ years shipping healthcare and EdTech products end-to-end, including AI report generation on the Claude API.",
     // Twitter image is generated dynamically — see src/app/twitter-image.tsx
   },
   robots: {

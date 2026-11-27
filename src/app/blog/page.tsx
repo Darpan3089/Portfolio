@@ -62,7 +62,7 @@ export default function BlogPage() {
               Blog
             </h1>
             <p className="text-base" style={{ color: "var(--text-muted)" }}>
-              Writing about frontend development, performance, and the tools I
+              Writing about full-stack development, performance, and the tools I
               find useful.
             </p>
           </div>

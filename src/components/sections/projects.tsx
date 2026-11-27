@@ -24,7 +24,7 @@ const projects: Project[] = [
     slug: "workflow-management-system",
     title: "Workflow Management System",
     description:
-      "An internal tool for enterprise teams to orchestrate complex workflows, task dependencies, and automated notifications — reducing manual overhead by 60%.",
+      "A full-stack side project with AI-assisted task management, time tracking, and team collaboration — I built the frontend, APIs, and database layer end-to-end.",
     tags: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB"],
     image: "/projects/workflow.png",
     featured: true,
@@ -33,7 +33,7 @@ const projects: Project[] = [
     slug: "core-health-physiotherapy",
     title: "Core Health Physiotherapy",
     description:
-      "A healthcare platform with patient-facing service and booking workflows and an admin panel, integrated with REST APIs and a MySQL backend.",
+      "A full-stack clinic platform with patient-facing service and booking workflows and an admin panel, backed by an Express.js API and MySQL database behind a responsive Tailwind CSS frontend.",
     tags: ["React", "Express.js", "MySQL", "Tailwind CSS", "Redux"],
     image: "/projects/physio.png",
     liveUrl: "https://core-health-physiotherapy.vercel.app",
@@ -43,19 +43,11 @@ const projects: Project[] = [
     slug: "gas-flow-solution",
     title: "Gas Flow IoT Dashboard",
     description:
-      "A responsive IoT monitoring dashboard that streams live sensor data over WebSockets, with interactive Chart.js visualizations and reusable reporting components.",
+      "A real-time IoT monitoring dashboard streaming live gas-flow data from a Node.js WebSocket server to interactive Chart.js visualizations.",
     tags: ["React", "TypeScript", "Chart.js", "WebSockets", "Node.js"],
     image: "/projects/gasflow.png",
     liveUrl: "https://gas-flow-solution.vercel.app",
     featured: true,
-  },
-  {
-    slug: "personal-saas-project",
-    title: "SaaS Productivity Tool",
-    description:
-      "A personal side project — a lightweight SaaS productivity tool with AI-assisted task management, time tracking, and team collaboration features.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Resend", "Vercel"],
-    image: "/projects/saas.png",
   },
 ];
 

@@ -18,10 +18,11 @@ const marqueeItems = [
   "Redux Toolkit",
   "Tailwind CSS",
   "shadcn/ui",
+  "Express.js",
   "WebSockets",
   "Socket.io",
-  "NestJS",
-  "PostgreSQL",
+  "MySQL",
+  "MongoDB",
   "Strapi CMS",
   "Playwright",
   "AWS",
@@ -196,7 +197,7 @@ export function HeroSection() {
               style={{ color: "var(--text-muted)" }}
             >
               <span className="pulse-dot" aria-hidden="true" />
-              Available to join immediately
+              Open to new opportunities · Remote-ready
             </div>
 
             {/* Eyebrow — typewriter effect */}
@@ -205,7 +206,7 @@ export function HeroSection() {
               style={{ color: "var(--accent)" }}
             >
               <span className="typewriter">
-                Senior Frontend Developer
+                Full-Stack Developer
               </span>
             </p>
 
@@ -219,7 +220,7 @@ export function HeroSection() {
             >
               I build fast,{" "}
               <span className="gradient-text whitespace-nowrap">real-time</span>{" "}
-              React apps that don&apos;t break under pressure.
+              products end-to-end that don&apos;t break under pressure.
             </h1>
 
             {/* Subtext */}
@@ -227,12 +228,12 @@ export function HeroSection() {
               className="text-lg mb-10 max-w-xl"
               style={{ color: "var(--text-muted)", lineHeight: "1.7" }}
             >
-              I&apos;m Darpan — a frontend engineer with 5+ years building
-              healthcare SaaS, ERP, and business products with React, Next.js, and
-              TypeScript. From appointment booking, patient records, and POS
-              platforms to live dashboards and AI-drafted clinical reports on the
-              Claude API, I turn complex requirements into interfaces that stay
-              fast, reliable, and safe to use.
+              I&apos;m Darpan — a full-stack developer with 5+ years building
+              healthcare and EdTech products, from React/Next.js interfaces to
+              Node.js APIs, databases, and cloud deployment. From appointment
+              booking, patient records, and POS platforms to live dashboards and
+              AI-drafted clinical reports on the Claude API, I ship complete
+              features that stay fast, reliable, and safe to use.
             </p>
 
             {/* CTAs */}

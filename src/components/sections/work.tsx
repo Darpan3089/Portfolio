@@ -11,9 +11,16 @@ import {
 import { FadeUp } from "@/components/motion-wrapper";
 import { SectionHeading } from "@/components/section-heading";
 
+interface WorkRole {
+  title: string;
+  /** Only needed when a company has more than one role */
+  period?: string;
+}
+
 interface WorkEntry {
   company: string;
-  role: string;
+  /** Most recent role first */
+  roles: WorkRole[];
   period: string;
   current?: boolean;
   achievements: string[];
@@ -22,25 +29,25 @@ interface WorkEntry {
 const workHistory: WorkEntry[] = [
   {
     company: "Kode Creators Pvt. Ltd.",
-    role: "Frontend Developer",
-    period: "Sep 2022 — Oct 2026",
+    roles: [{ title: "Software Engineer (Full-Stack)" }],
+    period: "Sep 2022 — Present",
+    current: true,
     achievements: [
-      "Led frontend development of 5+ healthcare products (appointment booking, patient management, billing, and POS) using React, Next.js, TypeScript, and Tailwind CSS, used by 50+ clinics / 100+ daily users.",
-      "Built AI-assisted report generation on the Claude API that drafts discharge summaries, lab result interpretations, radiology reports, consultation notes, and daily/monthly management reports from patient or hospital data.",
-      "Designed a human-in-the-loop review flow: AI output is always a labelled draft the responsible clinician must edit, approve, or reject before it enters the record, and every draft keeps its source data so reviewers can check it.",
-      "Built a shared AI service layer that masks PII (names, phones, addresses, MRNs) before data leaves the server, uses versioned prompt templates, enforces per-hospital on/off switches and monthly quotas, and audits every AI request.",
+      "Worked as a full-stack developer on 5+ healthcare products (appointment booking, patient management, billing, POS) using React, Next.js, TypeScript, Node.js, Express.js, and MySQL/MongoDB, used by 50+ clinics and 100+ daily users.",
+      "Built AI-assisted report generation on the Claude API (discharge summaries, lab interpretations, radiology reports, consultation notes, management reports) with a human-in-the-loop flow: clinicians edit, approve, or reject every AI draft before it enters the record.",
+      "Built a shared Node.js AI service layer that masks PII before data leaves the server, uses versioned prompt templates, enforces per-hospital switches and monthly quotas, and audits every AI request.",
+      "Designed RESTful APIs, database schemas, and role-based access control for clinic staff, doctors, and admins.",
       "Defined the frontend architecture and a reusable component library shared across 5+ projects, cutting new-screen development time by about 40%.",
-      "Migrated data fetching across 12+ modules from SWR to TanStack Query (caching, request deduplication, background refetching, optimistic updates), reducing redundant API calls by about 35%.",
-      "Built real-time appointment and operations dashboards with WebSockets and Socket.io, replacing manual refresh with live updates.",
-      "Improved load performance using code splitting, lazy loading, React Suspense, and memoization.",
-      "Built a custom Strapi headless CMS so the client could update Next.js website content with no developer involvement.",
-      "Deployed and maintained applications on AWS (EC2, Route 53, CloudFront) with Nginx, PM2, and GitHub Actions CI/CD, plus Vercel and Netlify.",
-      "Used Claude Code and Cursor to speed up delivery, reviewing all generated code for type safety and maintainability; tested with Vitest, React Testing Library, and Playwright.",
+      "Migrated 12+ modules from SWR to TanStack Query, reducing redundant API calls by about 35%.",
+      "Built real-time appointment and operations dashboards with Node.js and Socket.io, replacing manual refresh with live updates.",
+      "Built a custom Strapi headless CMS for client-managed Next.js content, and improved load performance with code splitting, lazy loading, React Suspense, and memoisation.",
+      "Contributed to an Angular-based client application: UI components, services, reactive forms, and bug fixes.",
+      "Deployed and maintained apps on AWS (EC2, Route 53, CloudFront) with Nginx, PM2, and GitHub Actions CI/CD, plus Vercel and Netlify.",
     ],
   },
   {
     company: "ImageIO Knowledge Solutions Pvt. Ltd.",
-    role: "Full Stack Developer",
+    roles: [{ title: "Full Stack Developer" }],
     period: "Sep 2021 — Aug 2022",
     achievements: [
       "Built Academic ERP modules for students, courses, faculty, and administration using React, Node.js, Express, and MySQL, serving 5+ institutions / 100+ users.",
@@ -194,9 +201,26 @@ export function WorkSection() {
                           >
                             {entry.company}
                           </h3>
-                          <p className="text-sm font-medium" style={{ color: "var(--accent)" }}>
-                            {entry.role}
-                          </p>
+                          <ul className="space-y-0.5">
+                            {entry.roles.map((role, i) => (
+                              <li key={role.title} className="text-sm">
+                                <span
+                                  className="font-medium"
+                                  style={{ color: i === 0 ? "var(--accent)" : "var(--text-muted)" }}
+                                >
+                                  {role.title}
+                                </span>
+                                {role.period && (
+                                  <span
+                                    className="font-mono text-xs ml-2"
+                                    style={{ color: "var(--text-muted)" }}
+                                  >
+                                    {role.period}
+                                  </span>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
 
                         <div className="flex items-center gap-2 shrink-0">

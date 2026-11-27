@@ -14,9 +14,9 @@ import { SectionIndicator } from "@/components/section-indicator";
 
 export const metadata: Metadata = {
   title:
-    "Darpan Patel | Senior Frontend Developer | React, Next.js & AI",
+    "Darpan Patel | Full-Stack Developer | React, Next.js, Node.js & AI",
   description:
-    "Senior Frontend Developer with 5+ years building healthcare SaaS, ERP, and business products with React, Next.js, and TypeScript — plus AI features on the Claude API. Available to join immediately.",
+    "Full-Stack Developer with 5+ years building healthcare and EdTech products end-to-end with React, Next.js, Node.js, and TypeScript — plus production AI features on the Claude API.",
 };
 
 export default function HomePage() {

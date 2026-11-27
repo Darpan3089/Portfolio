@@ -3,8 +3,8 @@ import { FadeUp } from "@/components/motion-wrapper";
 import { SectionHeading } from "@/components/section-heading";
 
 const facts = [
-  { Icon: Layers, label: "Domains", value: "Healthcare SaaS · ERP · Business" },
-  { Icon: Code2, label: "Tech focus", value: "React / Next.js / TypeScript / AI" },
+  { Icon: Layers, label: "Domains", value: "Healthcare SaaS · EdTech ERP" },
+  { Icon: Code2, label: "Tech focus", value: "React / Next.js / Node.js / AI" },
   { Icon: MapPin, label: "Based in", value: "Vadodara, Gujarat, India" },
 ];
 
@@ -36,27 +36,28 @@ export function AboutSection() {
                 style={{ color: "var(--text-muted)" }}
               >
                 <p>
-                  I&apos;m Darpan, a Frontend Developer based in{" "}
+                  I&apos;m Darpan, a Full-Stack Developer based in{" "}
                   <strong style={{ color: "var(--text-primary)" }}>Vadodara, Gujarat, India</strong>,
                   with{" "}
                   <strong style={{ color: "var(--text-primary)" }}>5+ years of experience</strong>{" "}
-                  building healthcare, ERP, and business products. I specialize in React, Next.js,
-                  and TypeScript, with a focus on frontend architecture, real-time dashboards,
-                  RBAC-driven multi-role interfaces, and REST API integration — and I work across
-                  the stack with Node.js, NestJS, and PostgreSQL.
+                  building complete products end-to-end — from React and Next.js interfaces to
+                  Node.js and Express APIs, MySQL and MongoDB databases, and cloud deployment. I
+                  focus on clean, strictly typed code, predictable delivery, and performance-first
+                  engineering across healthcare and EdTech.
                 </p>
                 <p>
                   At{" "}
-                  <strong style={{ color: "var(--text-primary)" }}>Kode Creators</strong>, I led
-                  frontend development of 5+ healthcare products — appointment booking, patient
+                  <strong style={{ color: "var(--text-primary)" }}>Kode Creators</strong>, I work
+                  as a full-stack developer on 5+ healthcare products — appointment booking, patient
                   management, billing, and POS — used by 50+ clinics. I built{" "}
                   <strong style={{ color: "var(--text-primary)" }}>
                     AI report generation on the Claude API
                   </strong>{" "}
-                  that drafts discharge summaries, lab and radiology reports, and management
-                  reports, with clinician review, PII masking, and per-hospital usage controls. I
-                  also defined a shared component library that cut new-screen development time by
-                  about 40%, and moved 12+ modules from SWR to{" "}
+                  backed by a Node.js service layer that masks PII, enforces per-hospital quotas, and
+                  audits every request, with clinicians reviewing every draft before it enters the
+                  record. I also designed the REST APIs, database schemas, and role-based access
+                  behind these products, defined a shared component library that cut new-screen
+                  development time by about 40%, and moved 12+ modules from SWR to{" "}
                   <strong style={{ color: "var(--text-primary)" }}>TanStack Query</strong>,
                   reducing redundant API calls by about 35%.
                 </p>
@@ -105,7 +106,7 @@ export function AboutSection() {
                   className="text-xl font-bold mb-1"
                   style={{ color: "var(--text-primary)" }}
                 >
-                  Join immediately
+                  Open to new roles
                 </p>
                 <p className="text-sm" style={{ color: "var(--accent)" }}>
                   Remote · Ahmedabad · Pune · Bangalore · Hyderabad

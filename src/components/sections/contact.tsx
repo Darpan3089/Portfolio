@@ -218,7 +218,7 @@ export function ContactSection() {
           }
           description={
             <>
-              Hiring for a frontend role? I&apos;d love to hear about the team
+              Hiring for a full-stack role? I&apos;d love to hear about the team
               and what you&apos;re building. I reply within 24 hours.
             </>
           }
@@ -277,7 +277,7 @@ export function ContactSection() {
                   style={{ color: "var(--text-primary)" }}
                 >
                   <span className="pulse-dot" aria-hidden="true" />
-                  Available to join immediately
+                  Open to new opportunities
                 </p>
                 <p className="text-xs" style={{ color: "var(--text-muted)" }}>
                   Remote · Ahmedabad · Pune · Bangalore · Hyderabad

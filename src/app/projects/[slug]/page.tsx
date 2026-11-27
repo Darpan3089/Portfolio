@@ -24,63 +24,48 @@ const projects: Project[] = [
     slug: "workflow-management-system",
     title: "Workflow Management System",
     description:
-      "An internal tool for enterprise teams to orchestrate complex workflows, task dependencies, and automated notifications.",
-    tags: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB", "Socket.io"],
+      "A full-stack side project with AI-assisted task management, time tracking, and team collaboration, built end-to-end.",
+    tags: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB"],
     problem:
-      "The client's team was managing complex, multi-stage workflows using spreadsheets and Slack messages. Tasks fell through the cracks, deadlines were missed, and there was no visibility into overall project progress. They needed a centralized tool that reflected how their unique business processes actually worked.",
+      "I wanted a single place for small teams to manage tasks, track time, and collaborate, without the overhead of heavier tools. It was also a chance to build a complete product on my own — frontend, API, and database — rather than one slice of it.",
     approach:
-      "I started with a discovery phase — two weeks of user interviews with project managers and team leads to understand their actual workflows. Instead of fitting them into a generic kanban board, I built a flexible dependency graph system where tasks could have multiple parents and children. The UI was designed around 'stages' rather than statuses, matching their mental model exactly. I used Next.js App Router for server-side rendering of the workflow graphs, which made sharing workflow links (with full context) trivial.",
+      "I built the whole stack myself. A React and Next.js frontend handles the task boards, time tracking, and team views; a Node.js API holds the business logic; and MongoDB stores the data. AI assistance helps draft and organise tasks, so capturing work is faster than filling in a form, while staying an optional layer rather than a core dependency.",
     techDecisions:
-      "Chose MongoDB for the flexible document schema that suited workflow graph data far better than a rigid SQL structure. Used Socket.io for real-time updates so team members see changes instantly without polling. State management was kept purposefully local — most workflow state lives on the server, streamed to clients, avoiding the complexity of a global client store. TypeScript strict mode caught several data shape mismatches during development that would have been runtime bugs in production.",
+      "Next.js gave me server rendering and a single codebase for the UI and routing. MongoDB's flexible document model suited task and workflow data whose shape keeps changing as features grow. Keeping the API in Node.js with TypeScript meant one language across the stack and shared types between client and server.",
     lessonsLearned:
-      "Domain modeling beats generic solutions. The biggest win was spending time understanding the client's business processes before writing a line of code — the resulting mental model shaped the data structures and UI patterns in ways that a generic project management tool never could. Also, real-time features should be designed as progressive enhancements, not core requirements — the app worked perfectly with server-rendered data when WebSocket connections dropped.",
+      "Owning every layer made the trade-offs clear — where to validate, what to cache, and how much state belongs on the server. Shipping a small but complete product end-to-end taught me more than building an isolated feature ever could.",
   },
   {
     slug: "core-health-physiotherapy",
     title: "Core Health Physiotherapy",
     description:
-      "A full-stack patient management and online booking platform for a physiotherapy clinic chain.",
-    tags: ["React", "Express.js", "MySQL", "Tailwind CSS", "Redux", "Stripe"],
+      "A full-stack clinic platform with patient-facing service and booking workflows and an admin panel, backed by an Express.js API and MySQL database behind a responsive Tailwind CSS frontend.",
+    tags: ["React", "Express.js", "MySQL", "Redux", "Tailwind CSS"],
     liveUrl: "https://core-health-physiotherapy.vercel.app",
     problem:
-      "The clinic was using paper-based patient records and phone-only appointment booking. This created bottlenecks at reception, led to scheduling errors, and made patient history difficult to access during appointments. The solution needed to be simple enough for clinic staff with minimal technical literacy while powerful enough to handle a growing patient database.",
+      "The clinic needed patients to book online and staff to manage appointments and records in one place, instead of handling bookings by phone and keeping records by hand.",
     approach:
-      "Built a two-interface system: a patient-facing booking portal (simple, mobile-first, minimal friction) and a staff dashboard for managing appointments, patient records, and billing. The booking flow required zero account creation for first-time patients — we used phone number verification instead, reducing drop-off dramatically. The staff dashboard used a classic calendar view augmented with quick-action shortcuts for the most common tasks.",
+      "I built two sides to the platform: a patient-facing portal for services and booking, and an admin panel for staff to manage appointments and patient records. The frontend is React and Tailwind CSS, backed by an Express.js REST API and a MySQL database that handle the booking flow and records.",
     techDecisions:
-      "MySQL was the right choice here — patient data is highly relational (patients → appointments → treatments → billing), and the referential integrity guarantees matter in a healthcare context. Redux managed the complex scheduling state in the staff dashboard where multiple calendars needed to stay in sync. Stripe handled payments with their client-side Elements for PCI compliance without us touching card data.",
+      "MySQL fit the highly relational data — patients, appointments, and treatments — where referential integrity matters. Redux kept the admin scheduling state in sync across views. Tailwind CSS kept the UI responsive and consistent to build out quickly.",
     lessonsLearned:
-      "Healthcare software requires extra attention to privacy and error states. Every destructive action (cancelling appointments, archiving records) needed a confirmation step and an audit log. The most valuable design decision was making the 'quick book' flow for returning patients a single screen — the 80% case should be fast, even if the 20% case (new patients) takes longer.",
+      "In a clinic setting, clear states and confirmations matter — destructive actions like cancelling an appointment need a guard. Making the common path, a returning patient booking, fast while still handling the less common cases was the design decision that paid off most.",
   },
   {
     slug: "gas-flow-solution",
     title: "Gas Flow IoT Dashboard",
     description:
-      "Industrial IoT dashboard for monitoring gas flow metrics in real-time with alerting and historical reporting.",
-    tags: ["React", "TypeScript", "Chart.js", "WebSockets", "Node.js", "InfluxDB"],
+      "A real-time IoT monitoring dashboard streaming live gas-flow data from a Node.js WebSocket server to interactive Chart.js visualizations.",
+    tags: ["React", "TypeScript", "Node.js", "WebSockets", "Chart.js"],
     liveUrl: "https://gas-flow-solution.vercel.app",
     problem:
-      "An industrial gas distribution company needed real-time visibility into flow rates, pressure readings, and valve states across multiple monitoring stations. Alert conditions were being missed because operators had to check multiple disconnected systems. Historical data was stored in spreadsheets, making trend analysis impossible.",
+      "Gas-flow readings needed to be visible the moment they changed, not polled or exported to spreadsheets. Operators needed one live view of flow data across the system.",
     approach:
-      "Built a single unified dashboard that aggregated data from all monitoring stations into one view with a configurable alerting system. Used WebSockets for real-time data streaming with an exponential backoff reconnection strategy for resilience. Alerts were designed as a layered system — visual, audio (opt-in), and email notifications — so operators could configure their preferred channels. Historical analysis was powered by time-series charts with selectable time windows.",
+      "I built a responsive dashboard that streams live sensor data from a Node.js WebSocket server straight into interactive Chart.js visualizations, with reusable reporting components so new metrics are quick to add. The connection reconnects on drops so the view stays reliable.",
     techDecisions:
-      "InfluxDB was chosen for time-series storage because it's built for exactly this use case — efficient storage and querying of timestamped metrics data. Chart.js for visualization because it's lightweight and highly configurable, allowing custom rendering for alert thresholds. TypeScript strict mode was especially valuable here — sensor data types were complex and nested, and type safety prevented several bugs around unit conversions.",
+      "WebSockets over a Node.js server pushed updates to the client the moment data arrived, avoiding polling. Chart.js kept the visualizations lightweight and configurable. TypeScript kept the sensor data shapes type-safe from the socket layer through to the charts.",
     lessonsLearned:
-      "Industrial software has a different performance profile than typical web apps. The data volume (readings every 100ms from 50+ stations) required careful throttling and batching strategies to avoid overwhelming the browser. Also learned to always design for connection failures first — in industrial environments, network reliability is not guaranteed, and the dashboard needed to degrade gracefully and clearly communicate its connection state.",
-  },
-  {
-    slug: "personal-saas-project",
-    title: "SaaS Productivity Tool",
-    description:
-      "A personal side project — lightweight SaaS with AI-assisted task management and time tracking.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "OpenAI", "Vercel"],
-    problem:
-      "Existing productivity tools are either too complex (Notion, Jira) or too simple (basic to-do apps). I wanted to build something that balanced structure with flexibility, specifically for solo developers and small teams who needed project tracking without the overhead.",
-    approach:
-      "Designed around a 'capture first' philosophy — the fastest path from thought to task is the priority. Built a unified input that intelligently routes entries to the right place based on content. AI assistance is used for auto-tagging, priority suggestions, and generating daily summaries, not as a core dependency. Time tracking is ambient — starts automatically when you open a task, stops when you navigate away.",
-    techDecisions:
-      "Next.js App Router with server actions for mutations, eliminating the need for a separate API layer for most operations. Prisma with PostgreSQL for type-safe database access. OpenAI API with streaming responses for the AI features, so users see output immediately. Deployed to Vercel with their Postgres integration for zero infrastructure management.",
-    lessonsLearned:
-      "Building for yourself first is the best product research. Dogfooding this tool daily revealed pain points within days that I never would have caught in user testing. The biggest technical lesson: server actions simplify data mutations dramatically, but you still need careful optimistic UI updates to make the experience feel instant.",
+      "Real-time UIs live or die on connection handling — the dashboard had to degrade gracefully and show its connection state clearly, not freeze on a dropped socket. Throttling incoming updates kept rendering smooth under a steady stream of data.",
   },
 ];
 
